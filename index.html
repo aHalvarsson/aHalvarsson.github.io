@@ -49,17 +49,36 @@
                 <main>
                     <section id="welcome">
                         <div id="aObject">
-                            <table>
-                                <tr>
-                                    <td rowspan="2" id="logo">aHalvarsson</td>
-                                    <td>C:</td>
-                                </tr>
-                                <tr>
-                                    <td>1<br />2</td>
-                                    <td>const</td>
-                                </tr>
+                            <div id="logoDiv">
+                                aHalvarsson
+                            </div>
+                            <div id="codeDiv">
+                                C: > a > Halvarsson > JS welcome.js > ...
 
-                            </table>
+                                <ol>
+                                    <li><u class="blue">const</u> a = <u class="blue">{</u></li>
+                                    <li><span class="indent">_Halvarsson : <u class="red">'Hello and welcome!'</u>,</span></li>
+                                    <li><span class="indent">_name : <u class="red">'Anders Halvarsson'</u>,</span></li>
+                                    <li><span class="indent">_work : <u class="red">'Front End Web Developer'</u>,</span></li>
+                                    <li><span class="indent"><u class="blue">get</u> Halvarsson <u class="green">() {</u></span></li>
+                                    <li><span class="double-indent"><u class="blue">return this</u>._Halvarsson;</span></li>
+                                    <li><span class="indent"><u class="green">}</u>,</span></li>
+                                    <li><span class="indent"><u class="blue">get</u> name <u class="green">() {</u></span></li>
+                                    <li><span class="double-indent"><u class="blue">return this</u>._name;</span></li>
+                                    <li><span class="indent"><u class="green">}</u>,</span></li>
+                                    <li><span class="indent"><u class="blue">get</u> work <u class="green">() {</u></span></li>
+                                    <li><span class="double-indent"><u class="blue">return this</u>._work;</span></li>
+                                    <li><span class="indent"><u class="green">}</u>,</span></li>
+                                    <li><span class="indent">link<u class="green">(</u>wTo<u class="green">) {</u></span></li>
+                                    <li><span class="indent">window.location.href = <u class="red">'./'</u> + wTo;</span></li>
+                                    <li><span class="indent"><u class="green">}</u></span></li>
+                                    <li><u class="blue">}</u></li>
+                                    <li>&#8195</li>
+                                    <li>console.log(`${a.Halvarsson} My name is ${a.name}.`);</li>
+                                    <li>console.log(`I’m a ${a.work} and this is my portfolio.`);</li>
+                                </ol>
+                            </div>
+                           
                         </div>
                     </section>
                 </main>
