@@ -1,0 +1,80 @@
+:root {
+    --font-red: #b20e1e;
+    --font-blue: #3300ff;
+    --font-green: #3a952f;
+    --font-yellow: #969100;
+    --font-grey: #818181;
+}
+
+                    /* Header and nav */
+
+nav {
+    width: 100%;
+    margin: 2dvh 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 0 auto;
+}
+
+nav li {
+    border: 1px solid #d3d3d3;
+    height: 2.25rem;
+    width: 11.25rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.3rem;
+
+}
+
+.button-text {
+  padding: 0 0.3rem;
+}
+
+.prefix,
+.bracket,
+.suffix {
+  padding: 0;
+}
+
+
+
+                    /* Main content */
+
+#bodyContainer {
+    margin-top: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: row nowrap;
+}
+
+.mainDivs {
+    margin: 0 0.2rem;
+    height: 46rem;
+}
+
+.portfolioDiv {
+    width: 6.25rem;
+    position: relative;
+    writing-mode: vertical-rl;
+}
+
+.portfolioDiv img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid #d3d3d3;
+    width: 5.9rem;
+}
+
+#logo {
+    writing-mode: vertical-rl;
+}

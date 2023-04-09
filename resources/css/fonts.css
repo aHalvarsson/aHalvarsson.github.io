@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+  html {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+  }
+
+  .prefix, .suffix {
+    font-size: 0.9rem;
+  }
+  
+  .bracket {
+    color: var(--font-blue);
+    font-size: 0.8rem;
+  }
+
+  .button-text {
+    color: var(--font-red);
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
