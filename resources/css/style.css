@@ -66,6 +66,8 @@ nav li {
     height: 47rem;
     position: relative;
     writing-mode: vertical-lr;
+    transition-timing-function: ease;
+    transition: width 1s;
   }
   
   .portfolioDiv .imgBox {
@@ -73,7 +75,7 @@ nav li {
     top: 0;
     right: 0;
     border: 1px solid #d3d3d3;
-    width: 5.9rem;
+    width: 94%;
     height: 100%;
     z-index: 1;
     overflow: hidden;
@@ -96,6 +98,7 @@ nav li {
     object-fit: cover;
     object-position: center;
     filter: grayscale(100%);
+    transition: filter 1s;
   }
 
 #welcome, #aObject, #aObject table {
@@ -176,6 +179,30 @@ nav li {
 
 #terminalText {
     margin-top: 1.2rem;
+}
+
+#portfolioItems {
+    position: absolute;
+    z-index: 10;
+    display: none;
+    height: 44rem;
+    width: 2rem;
+    top: 3rem;
+    left: 0;
+    opacity: 1;
+    background-color: #00000070;
+    transition-timing-function: ease;
+}
+
+#clickToExitBox {
+    position: absolute;
+    z-index: 8;
+    display: none;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #ffffff1e;
 }
 
 .block {
