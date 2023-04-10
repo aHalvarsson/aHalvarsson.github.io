@@ -1,4 +1,12 @@
-                    /* Header and nav */
+:root {
+    --font-red: #b20e1e;
+    --font-blue: #3300ff;
+    --font-green: #3a952f;
+    --font-yellow: #969100;
+    --font-grey: #818181;
+}
+
+/* Header and nav */
 
 nav {
     width: 100%;
@@ -40,7 +48,7 @@ nav li {
                     /* Main content */
 
 #bodyContainer {
-    margin-top: 4rem;
+    margin-top: 2.5rem;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -48,24 +56,47 @@ nav li {
     flex-flow: row nowrap;
 }
 
-.mainDivs {
-    margin: 0 0.2rem;
-    height: 46rem;
+.mainDiv {
+    margin: 0 1rem;
 }
 
 .portfolioDiv {
+    margin: 0 0.2rem;
     width: 6.25rem;
+    height: 47rem;
     position: relative;
-    writing-mode: vertical-rl;
-}
-
-.portfolioDiv img {
+    writing-mode: vertical-lr;
+  }
+  
+  .portfolioDiv .imgBox {
     position: absolute;
     top: 0;
     right: 0;
     border: 1px solid #d3d3d3;
     width: 5.9rem;
-}
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .portfolioDiv figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3.1rem;
+    height: 35rem;
+    background: linear-gradient(#ffffff9d 50%, #ffffff00 100%);
+    z-index: 2;
+    padding-top: 0.8rem;
+  }
+  
+  .portfolioImg {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%);
+  }
 
 #welcome, #aObject, #aObject table {
     width: 100%;
@@ -91,14 +122,15 @@ nav li {
     margin-left: 1rem;
     margin-top: 1rem;
     counter-reset: line-number;
-  }
+}
   
-  #codeDiv li {
+#codeDiv li {
     position: relative;
-    padding-left: 3.5rem;
-  }
+    padding-left: 3.5rem;  
+    line-height: 1.1rem;  
+}
 
-  #codeDiv li:before {
+#codeDiv li:before {
     counter-increment: line-number;
     content: counter(line-number);
     width: 1.5rem;
@@ -107,20 +139,45 @@ nav li {
     left: 0;
     font-weight: 300;
     color: #337792;
-  }
+    vertical-align: middle;
+}
   
-  .indent::before {
-    content: '  ';
-    margin-left: 1.5rem;
-  }
+.indent::before {
+    content: ' ';
+    font-size: 1.1rem;
+    padding-left: 1.5rem;
+    border-left: 1px solid #cdced1;
+}
   
-  .double-indent::before {
-    content: '    ';
-    margin-left: 3rem;
-  }
+.double-indent::before {
+    content: ' ';
+    padding-left: 1.5rem;
+    font-size: 1.1rem;
+    border-left: 1px solid #cdced1;
+    border-right: 1px solid #cdced1;
+    margin-right: 1.5rem;
+}
 
-  .empty-row {
+.empty-row {
     opacity: 0;
-  }
+}
 
-  
+#terminal {
+    width: 100%;
+    margin-top: 3.4rem;
+    border-top: 1px solid #cdced1;
+    padding-top: 1rem;
+}
+
+.term {
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid #424242;
+}
+
+#terminalText {
+    margin-top: 1.2rem;
+}
+
+.block {
+    display: block;
+}

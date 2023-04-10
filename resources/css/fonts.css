@@ -1,50 +1,109 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-:root {
-    --font-red: #b20e1e;
-    --font-blue: #3300ff;
-    --font-green: #3a952f;
-    --font-yellow: #969100;
-    --font-grey: #818181;
+@font-face {
+    font-family: metro;
+    src: url('../fonts/Metropolis-Light.otf') format('OpenType');
+    font-weight: 300;
+    font-style: normal
 }
 
-  html {
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+@font-face {
+    font-family: metro;
+    src: url('../fonts/Metropolis-Regular.otf') format('OpenType');
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: metro;
+    src: url('../fonts/Metropolis-Medium.otf') format('OpenType');
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: metro;
+    src: url('../fonts/Metropolis-SemiBold.otf') format('OpenType');
+    font-weight: 600;
+    font-style: normal
+}
+
+@font-face {
+    font-family: metro;
+    src: url('../fonts/Metropolis-Bold.otf') format('OpenType');
+    font-weight: 700;
+    font-style: normal
+}
+
+html {
+    font-family: 'metro', Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 400;
     color: #000;
-  }
+}
 
-  .prefix, .suffix {
+.prefix, .suffix {
     font-size: 0.9rem;
-  }
+}
   
-  .bracket {
+.bracket {
     color: var(--font-blue);
-    font-size: 0.8rem;
-  }
+    font-size: 1rem;
+}
 
-  .button-text {
+.button-text {
     color: var(--font-red);
     font-size: 1.2rem;
     font-weight: 500;
-  }
+}
 
-  #logoDiv {
+#logoDiv {
     writing-mode: vertical-lr;
+}
+
+h1 {
     font-size: 3.75rem;
     font-weight: 600;
     line-height: 3.75rem;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
 #codeDiv {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+}
+
+#codeDiv ol {
+    font-weight: 500;
 }
 
 #codeDiv li:before {
     font-weight: 300;
     color: #337792;
-  }
+}
+
+#terminal {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    font-weight: 400;
+}
+
+.term {
+    color: #424242;
+}
+
+#terminal h2 {
+    letter-spacing: 0.03rem;
+    line-height: 1.3rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0.8rem 0;
+}
+
+.portfolioDiv figcaption {
+    font-weight: 500;
+    font-size: 2.5rem;
+}
 
 .blue {
     color: var(--font-blue);
@@ -64,4 +123,12 @@
 
 .grey {
     color: var(--font-grey);
+}
+
+.black {
+    color: #000;
+}
+
+.bold {
+    font-weight: 600;
 }

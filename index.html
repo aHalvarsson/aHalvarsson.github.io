@@ -5,25 +5,31 @@
         <link href="./resources/css/reset.css" rel="stylesheet" />
         <link href="./resources/css/style.css" rel="stylesheet" />
         <link href="./resources/css/fonts.css" rel="stylesheet" />
+        <script src="./resources/js/script.js" defer></script> 
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
     <body>
         
         <div id="bodyContainer">
-            <div class="mainDivs portfolioDiv">mbTakvård.se</div>
-            <div class="mainDivs">
+            <figure class="portfolioDiv">
+                <figcaption class="portTitle">penPenVSCode</figcaption>
+                <div class="imgBox">
+                  <img src="./resources/images/penPen.jpg" alt="Pen Pen" class="portfolioImg port01" />
+                </div>
+            </figure>
+            <div class="mainDiv">
                 <header>
                     <nav>
                         <ul>
                             <li>
                                 <span aria-hidden="true">
                                     <span class="prefix">a.link</span><span class="bracket">(</span>
-                                  </span>
-                                  <span class="button-text">'portfolio'</span>
-                                  <span aria-hidden="true">
+                                </span>
+                                <span class="button-text">'portfolio'</span>
+                                <span aria-hidden="true">
                                     <span class="bracket">)</span><span class="suffix">;</span>
-                                  </span>
+                                </span>
                             </li>
                             <li>
                                 <span aria-hidden="true">
@@ -50,10 +56,10 @@
                     <section id="welcome">
                         <div id="aObject">
                             <div id="logoDiv">
-                                aHalvarsson
+                                <h1>aHalvarsson</h1>
                             </div>
                             <div id="codeDiv">
-                                C: > a > Halvarsson > JS welcome.js > ...
+                                <span class="grey">C: > a > Halvarsson ><u class="yellow bold"> JS</u> welcome.js > ...</span>
 
                                 <ol>
                                     <li><u class="blue">const</u> a = <u class="blue">{</u></li>
@@ -74,16 +80,32 @@
                                     <li><span class="indent"><u class="green">}</u></span></li>
                                     <li><u class="blue">}</u></li>
                                     <li>&#8195</li>
-                                    <li>console.log(`${a.Halvarsson} My name is ${a.name}.`);</li>
-                                    <li>console.log(`I’m a ${a.work} and this is my portfolio.`);</li>
+                                    <li>console.log<u class="blue">(<u class="red">`<u class="green">${</u><u class="black">a.Halvarsson</u><u class="green">}</u> My name is <u class="green">${</u><u class="black">a.name</u><u class="green">}</u>.`</u>)</u>;</li>
+                                    <li>console.log<u class="blue">(<u class="red">`I’m a <u class="green">${</u><u class="black">a.work</u><u class="green">}</u> and this is my portfolio.`</u>)</u>;</li>
                                 </ol>
                             </div>
-                           
+                        </div>
+                        <div id="terminal">
+                            <span class="term">TERMINAL</span>
+                            <div id="terminalText">
+                                <span class="grey">C:\a\Halvarsson ><u class="yellow bold"> node</u> welcome.js</span>
+
+                                <h2>Hello and welcome! My name is Anders Halvarsson.<br />
+                                    I’m a Front End Web Developer and this is my portfolio.</h2>
+                                
+                                <span class="grey">C:\a\Halvarsson > █</span>
+                            
+                            </div>
                         </div>
                     </section>
                 </main>
             </div>
-            <div class="mainDivs portfolioDiv">spacejumpers</div>
+            <figure class="portfolioDiv port1">
+                <figcaption class="portTitle">projectPortfolio</figcaption>
+                <div class="imgBox">
+                  <img src="./resources/images/astro.jpg" alt="Astro" class="portfolioImg" />
+                </div>
+            </figure>
 
         </div>
         <footer>
