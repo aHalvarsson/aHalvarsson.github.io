@@ -44,27 +44,34 @@ const portImgClick = event => {
 
         const rect = portItem.getBoundingClientRect();
         xPosition = rect.left + window.pageXOffset;
+        let viewWidth = document.querySelector('html').clientWidth;
+        sameIndex = searchForIndex(portItem);
+        if(xPosition < (viewWidth/2)) {
+            pItemArt[sameIndex].style.left = xPosition - 288 + 'px';
+        } else {
+            pItemArt[sameIndex].style.left = xPosition + 'px';
+        }
         
         portWindow.style.left = xPosition + 40 + 'px';
         portItem.style.zIndex = '15';
         portWindow.style.display = 'block';
-        
-
-        
-
+        pItemArt[sameIndex].style.display = 'block';
+   
         setTimeout(() => {
             
             portWindow.style.opacity = '0.9';
             portWindow.style.left = 0 + 'px';
             portWindow.style.width = '100%';
             portWindow.style.transition = 'left 2s, width 2s, opacity 1s';
-            sameIndex = searchForIndex(portItem);
-            pItemArt[sameIndex].style.display = 'block';
+            
+            
+            pItemArt[sameIndex].style.left = viewWidth/2 - 288 + 'px';
             pItemArt[sameIndex].style.opacity = '1';
-            pItemArt[sameIndex].style.transition = 'opacity 1s';
+            pItemArt[sameIndex].style.transition = 'opacity 4s, left 2s';
             
             
         }, 0);
+
         setTimeout(() => {
             exitBox.addEventListener('click', abortPortfolio);
             portWindowFinish = true;

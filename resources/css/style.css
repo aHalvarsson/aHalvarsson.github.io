@@ -204,8 +204,11 @@ nav li {
 }
 
 .pItemClass {
+    position: absolute;
+    top: 4rem;
+    left: 0;
     width: 36rem;
-    margin: 0 auto;
+    z-index: 11;
     padding: 0.7rem;
 }
 
