@@ -2,10 +2,20 @@
 const portImg = document.getElementsByClassName('portfolioDiv');
 const exitBox = document.getElementById('clickToExitBox');
 const portWindow = document.getElementById('portfolioItems');
+const pItemArt = document.getElementsByClassName('pItemClass');
 let portWindowOpen = false;
 let portWindowFinish = true;
+let sameIndex;
 let portItem;
 let xPosition;
+
+const searchForIndex = term => {
+    for(let i = 0; i < portImg.length; i ++) {
+        if(portImg[i] === term) return i;
+    }
+
+    return -1;
+}
 
 const portImgHover = event => {
     let img = event.currentTarget.querySelector('img');
@@ -38,11 +48,22 @@ const portImgClick = event => {
         portWindow.style.left = xPosition + 40 + 'px';
         portItem.style.zIndex = '15';
         portWindow.style.display = 'block';
+        
+
+        
 
         setTimeout(() => {
+            
+            portWindow.style.opacity = '0.9';
             portWindow.style.left = 0 + 'px';
             portWindow.style.width = '100%';
-            portWindow.style.transition = 'left 2s, width 2s';
+            portWindow.style.transition = 'left 2s, width 2s, opacity 1s';
+            sameIndex = searchForIndex(portItem);
+            pItemArt[sameIndex].style.display = 'block';
+            pItemArt[sameIndex].style.opacity = '1';
+            pItemArt[sameIndex].style.transition = 'opacity 1s';
+            
+            
         }, 0);
         setTimeout(() => {
             exitBox.addEventListener('click', abortPortfolio);
@@ -63,10 +84,12 @@ const abortPortfolio = event => {
     portWindow.style.width = '2rem';
     portWindow.style.opacity = '0';
     portWindow.style.transition = 'left 1s, width 1s, opacity 1s';
+    pItemArt[sameIndex].style.opacity = '0';
+    pItemArt[sameIndex].style.transition = 'opacity 1s';
 
     setTimeout(() => {
         portWindow.style.display = 'none';
-        portWindow.style.opacity = '1';
+        pItemArt[sameIndex].style.display = 'none';
         portWindowOpen = false;
         portWindowFinish = true;
     }, 1000)

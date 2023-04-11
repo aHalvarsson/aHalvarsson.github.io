@@ -60,8 +60,9 @@ nav li {
     flex-flow: row nowrap;
 }
 
-.mainDiv {
+#mainDiv {
     margin: 0 1rem;
+    width: 36rem;
 }
 
 .portfolioDiv {
@@ -92,7 +93,7 @@ nav li {
     left: 0;
     width: 3.1rem;
     height: 35rem;
-    background: linear-gradient(#ffffff9d 50%, #ffffff00 100%);
+    background: linear-gradient(#ffffffbb 50%, #ffffff00 100%);
     z-index: 2;
     padding-top: 0.8rem;
   }
@@ -106,7 +107,7 @@ nav li {
     transition: filter 1s;
   }
 
-#welcome, #aObject, #aObject table {
+#welcome, #aObject {
     width: 100%;
 }
 
@@ -119,6 +120,7 @@ nav li {
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
+
 }
 
 #logoDiv {
@@ -192,13 +194,62 @@ nav li {
     display: none;
     height: 44rem;
     width: 2rem;
-    top: 3rem;
+    top: 4rem;
     left: 0;
-    opacity: 1;
-    background-color: #ffffffcc;
+    opacity: 0;
+    background-color: #ffffffde;
     border: 1px solid #cecece;
     box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.17), 0px 4px 8px 0 rgba(0, 0, 0, 0.07);
     transition-timing-function: ease;
+}
+
+.pItemClass {
+    width: 36rem;
+    margin: 0 auto;
+    padding: 0.7rem;
+}
+
+.pItemClass header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-flow: row nowrap;
+    gap: 0.7rem;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    border-bottom: 1px solid #cdced1;
+}
+
+.pItemClass h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--font-red);
+    margin-top: 1.5rem;
+}
+
+.pItemClass h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    color: #000;
+}
+
+.pItemClass p {
+    padding-left: 1.4rem;
+    margin-top: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.2rem;
+}
+
+#item-01 {
+    opacity: 0;
+    display: none;
+}
+
+#item-02 {
+    opacity: 0;
+    display: none;
 }
 
 #clickToExitBox {
@@ -209,7 +260,7 @@ nav li {
     width: 100%;
     top: 0;
     left: 0;
-    background-color: #ffffff1e;
+    background-color: #ffffff81;
 }
 
 .block {
