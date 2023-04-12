@@ -10,6 +10,10 @@
       
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Header and nav */
 
 nav {
@@ -229,26 +233,26 @@ nav li {
     align-items: baseline;
     flex-flow: row nowrap;
     gap: 0.7dvw;
-    padding-bottom: 0.5dvw;
+    padding-bottom: 0.3dvw;
     width: 100%;
     border-bottom: 1px solid #cdced1;
 }
 
-.pItemClass h3 {
+h3 {
     font-size: 1.15rem;
     font-weight: 600;
     color: var(--font-red);
     margin-top: 1.5dvw;
 }
 
-.pItemClass h2 {
+.pItemClass h2, #about h2, #contact h2 {
     font-size: 2.5rem;
     font-weight: 500;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     color: #000;
 }
 
-.pItemClass p {
+p {
     padding-left: 1.4dvw;
     margin-top: 0.4dvw;
     font-size: 0.95rem;
@@ -286,10 +290,48 @@ nav li {
 
 #about {
     width: 100%;
-    height: 4dvw;
-    margin-top: clamp(4rem, 7dvw, 7rem);
-    margin-bottom: 4rem;
-    }
+    margin-top: clamp(4rem, 6dvw, 6rem);
+}
+
+#about header {
+    padding-bottom: 0.3dvw;
+    width: 100%;
+    border-bottom: 1px solid #cdced1;
+}
+
+#skills, #contactWays {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#skills > *, #contactWays > * {
+font-size: 2em;
+width: 2em;
+margin-top: 0.4dvw;
+text-align: center;
+}
+
+#contact {
+    width: 100%;
+    margin-top: clamp(4rem, 6dvw, 6rem);
+}
+
+#contact header {
+    padding-bottom: 0.3dvw;
+    width: 100%;
+    border-bottom: 1px solid #cdced1;
+}
+
+footer {
+    width: 100%;
+    margin-top: 6rem;
+    height: 3rem;
+    background-color: #000;
+    text-align: center;
+    padding-top: 0.7dvw;
+}
 
 .block {
     display: block;
