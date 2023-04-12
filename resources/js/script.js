@@ -1,112 +1,132 @@
 
-const portImg = document.getElementsByClassName('portfolioDiv');
+const portImg = document.querySelectorAll('.portfolioDiv');
 const exitBox = document.getElementById('clickToExitBox');
 const portWindow = document.getElementById('portfolioItems');
-const pItemArt = document.getElementsByClassName('pItemClass');
+const pItemArt = document.querySelectorAll('.pItemClass');
+const mainD = document.getElementById('mainDiv');
+
+let mainDivPos;
+let clickLeft = true;
 let portWindowOpen = false;
 let portWindowFinish = true;
 let sameIndex;
 let portItem;
 let xPosition;
+let xPosDVW;
 
-const searchForIndex = term => {
-    for(let i = 0; i < portImg.length; i ++) {
-        if(portImg[i] === term) return i;
-    }
-
-    return -1;
-}
+const searchForIndex = term => [...portImg].indexOf(term);
 
 const portImgHover = event => {
-    let img = event.currentTarget.querySelector('img');
+    const img = event.currentTarget.querySelector('img');
     img.style.filter = 'grayscale(0%)';
-    event.currentTarget.style.width = '8rem';
-}
+    event.currentTarget.style.width = '8dvw';
+};
 
 const portImgOut = event => {
-    let img = event.currentTarget.querySelector('img');
+    const img = event.currentTarget.querySelector('img');
     img.style.filter = 'grayscale(100%)';
-    event.currentTarget.style.width = '6.25rem';
-}
+    event.currentTarget.style.width = '5.75dvw';
+};
 
 const portImgClick = event => {
-
-    if(!portWindowOpen) {
+    if (!portWindowOpen) {
         portWindowOpen = true;
         portWindowFinish = false;
+
         exitBox.style.display = 'block';
         exitBox.removeEventListener('click', abortPortfolio);
+        
+
         portItem = event.currentTarget;
         portItem.removeEventListener('mouseout', portImgOut);
+
         let img = portItem.querySelector('img');
         img.style.filter = 'grayscale(0%)';
-        portItem.style.width = '8rem';
+        portItem.style.width = '8dvw';
 
         const rect = portItem.getBoundingClientRect();
         xPosition = rect.left + window.pageXOffset;
+
+        mainDivPos = mainD.getBoundingClientRect().left + window.pageXOffset;
+
         let viewWidth = document.querySelector('html').clientWidth;
+        xPosDVW = (xPosition/viewWidth) * 100;
         sameIndex = searchForIndex(portItem);
+
         if(xPosition < (viewWidth/2)) {
-            pItemArt[sameIndex].style.left = xPosition - 288 + 'px';
+            pItemArt[sameIndex].style.left = xPosDVW - 18 + 'dvw';
+            portWindow.style.left = xPosDVW + 3.5 + 'dvw';
+            clickLeft = true;
         } else {
-            pItemArt[sameIndex].style.left = xPosition + 'px';
+            pItemArt[sameIndex].style.left = xPosDVW - 18 + 'dvw';
+            portWindow.style.left = 'auto';
+            portWindow.style.right = (100 - xPosDVW) - 3.5 + 'dvw';
+            clickLeft = false;
         }
         
-        portWindow.style.left = xPosition + 40 + 'px';
         portItem.style.zIndex = '15';
         portWindow.style.display = 'block';
         pItemArt[sameIndex].style.display = 'block';
    
+
         setTimeout(() => {
-            
+
             portWindow.style.opacity = '0.9';
-            portWindow.style.left = 0 + 'px';
-            portWindow.style.width = '100%';
-            portWindow.style.transition = 'left 2s, width 2s, opacity 1s';
+            exitBox.style.opacity = '1';
+            if(clickLeft) {
+                portWindow.style.width = 97 - 5.75 - xPosDVW + 'dvw';
+            } else {
+                portWindow.style.width = 97 - (100 - xPosDVW) + 'dvw';
+            }
+            portWindow.style.transition = 'width 2s, opacity 1s';
             
-            
-            pItemArt[sameIndex].style.left = viewWidth/2 - 288 + 'px';
+            pItemArt[sameIndex].style.left = (mainDivPos/viewWidth) * 100 + 'dvw';
             pItemArt[sameIndex].style.opacity = '1';
             pItemArt[sameIndex].style.transition = 'opacity 4s, left 2s';
-            
-            
         }, 0);
 
         setTimeout(() => {
             exitBox.addEventListener('click', abortPortfolio);
             portWindowFinish = true;
         }, 2500);
-    } else if (portWindowFinish) abortPortfolio();
-}
 
-const abortPortfolio = event => {
+    } else if (portWindowFinish) {
+        abortPortfolio();
+    }
+};
+
+const abortPortfolio = () => {
     portWindowFinish = false;
-    exitBox.style.display = 'none';
-    portItem.style.zIndex = 'auto';
-    portItem.addEventListener('mouseout', portImgOut);
-    portItem.querySelector('img').style.filter = 'grayscale(100%)';
-    portItem.style.width = '6.25rem';
     
-    portWindow.style.left = xPosition + 40 + 'px';
-    portWindow.style.width = '2rem';
-    portWindow.style.opacity = '0';
-    portWindow.style.transition = 'left 1s, width 1s, opacity 1s';
+    exitBox.style.opacity = '0';
+    
     pItemArt[sameIndex].style.opacity = '0';
     pItemArt[sameIndex].style.transition = 'opacity 1s';
 
+    portWindow.style.width = '2dvw';
+    portWindow.style.opacity = '0';
+    portWindow.style.transition = 'width 1s, opacity 1s';
+
+    portItem.addEventListener('mouseout', portImgOut);
+
+    portItem.querySelector('img').style.filter = 'grayscale(100%)';
+    portItem.style.width = '5.75dvw';
+    
     setTimeout(() => {
         portWindow.style.display = 'none';
         pItemArt[sameIndex].style.display = 'none';
+        portItem.style.zIndex = 'auto';
+        exitBox.style.display = 'none';
         portWindowOpen = false;
         portWindowFinish = true;
     }, 1000)
 
 }
 
-for(let i = 0; i < portImg.length; i++) {
-    portImg[i].addEventListener('mouseover', portImgHover);
-    portImg[i].addEventListener('mouseout', portImgOut);
-    portImg[i].addEventListener('click', portImgClick);
-}
+portImg.forEach(element => {
+    element.addEventListener('mouseover', portImgHover);
+    element.addEventListener('mouseout', portImgOut);
+    element.addEventListener('click', portImgClick);
+});
 
 exitBox.addEventListener('click', abortPortfolio);
