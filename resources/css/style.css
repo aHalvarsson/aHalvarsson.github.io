@@ -241,7 +241,7 @@ nav li:active {
     left: auto;
     right: auto;
     opacity: 0;
-    background-color: #ffffffde;
+    background-color: #ffffffef;
     border: 1px solid #cecece;
     box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.17), 0px 4px 8px 0 rgba(0, 0, 0, 0.07);
     transition-timing-function: ease;
@@ -341,6 +341,33 @@ width: 2em;
 margin-top: 0.4dvw;
 text-align: center;
 }
+
+i {
+    position: relative;
+}
+
+i[aria-label]:after {
+    opacity:0;
+    content: attr(aria-label);
+    padding: 0.25rem 0.5rem;
+    position: absolute;
+    font-size: 1rem;
+    font-family: 'metro', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    left: 50%;
+    top: 95%;
+    white-space: nowrap;
+    z-index: 20;
+    border: 1px solid #afafaf;
+    background:rgba(255, 255, 255, 0.877);
+    transition: opacity 0.5s;
+    pointer-events:none;
+  }
+  
+    i[aria-label]:hover:after {
+    opacity:1;
+    transition-delay:0.15s;
+  }
 
 #contact {
     width: 100%;
