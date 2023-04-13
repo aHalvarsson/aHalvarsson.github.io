@@ -305,6 +305,11 @@ p {
     display: none;
 }
 
+#item-04 {
+    opacity: 0;
+    display: none;
+}
+
 #clickToExitBox {
     position: absolute;
     z-index: 8;
@@ -333,11 +338,14 @@ p {
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
+    row-gap: 0.5rem;
+    column-gap: 0.3rem;
 }
 
 #skills > *, #contactWays > * {
 font-size: 2em;
-width: 2em;
+height: 2rem;
+width: 4rem;
 margin-top: 0.4dvw;
 text-align: center;
 }
