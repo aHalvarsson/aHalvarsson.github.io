@@ -45,17 +45,19 @@ html {
 
 .prefix, .suffix {
     font-size: 0.9rem;
+    color: #bbb;
 }
   
 .bracket {
-    color: var(--font-blue);
+    color: #bbbbbb;
     font-size: 1rem;
 }
 
 .button-text {
-    color: var(--font-red);
+    color: #ffffff;
     font-size: 1.2rem;
     font-weight: 500;
+    transition: font-size 0.25s, color 1s;
 }
 
 #logoDiv {
@@ -134,15 +136,8 @@ h1 {
     font-weight: 600;
 }
 
-.material-symbols-sharp {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 500,
-  'GRAD' 0
-}
-
 footer {
-    color: #fff;
+    color: var(--font-grey);
     font-size: 0.8rem;
     font-weight: 300;
 }

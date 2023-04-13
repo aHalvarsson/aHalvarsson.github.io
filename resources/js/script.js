@@ -4,6 +4,7 @@ const exitBox = document.getElementById('clickToExitBox');
 const portWindow = document.getElementById('portfolioItems');
 const pItemArt = document.querySelectorAll('.pItemClass');
 const mainD = document.getElementById('mainDiv');
+const sButtons = document.querySelectorAll('li');
 
 let mainDivPos;
 let clickLeft = true;
@@ -34,6 +35,7 @@ const portImgClick = event => {
         portWindowFinish = false;
 
         exitBox.style.display = 'block';
+        exitBox.style.height = document.body.offsetHeight + 'px';
         exitBox.removeEventListener('click', abortPortfolio);
         
 
@@ -123,10 +125,22 @@ const abortPortfolio = () => {
 
 }
 
+const pressButton = event => {
+    let element = event.currentTarget;
+
+    if(element.id === 'portfolioBtn') window.scroll({top:0, left:0, behavior: 'smooth'})
+    else if(element.id === 'aboutBtn') document.getElementById('about').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+    else if(element.id === 'contactBtn') document.getElementById('contact').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+}
+
 portImg.forEach(element => {
     element.addEventListener('mouseover', portImgHover);
     element.addEventListener('mouseout', portImgOut);
     element.addEventListener('click', portImgClick);
 });
+
+sButtons.forEach(element => {
+    element.addEventListener('click', pressButton);
+})
 
 exitBox.addEventListener('click', abortPortfolio);
