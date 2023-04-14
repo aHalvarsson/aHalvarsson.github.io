@@ -26,7 +26,7 @@ html {
 
 nav {
     width: 100%;
-    padding-top: clamp(1rem, 2dvw, 2rem);
+    padding-top: clamp(2rem, 4.5dvw, 4rem);
     padding-bottom: clamp(1rem, 2dvw, 2rem);
     display: flex;
     justify-content: center;
@@ -87,7 +87,7 @@ nav li:active {
                     /* Main content */
 
 #bodyContainer {
-    margin-top: clamp(1.5rem, 2.5dvw, 2.5rem);
+    margin-top: 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -100,10 +100,11 @@ nav li:active {
     margin-right: clamp(0.5rem, 1dvw, 1rem);
     width: 37dvw;
     max-width: 37rem;
+    position: relative;
 }
 
 .portfolioDiv {
-    margin: 0 0.2dvw;
+    margin: 2.5rem 0.2dvw;
     width: 5.75dvw;
     height: 47dvw;
     max-height: 47rem;
@@ -230,34 +231,31 @@ nav li:active {
     margin-top: clamp(0.6rem, 1.2dvw, 1.2rem);
 }
 
-#portfolioItems {
+#portfolio {
     position: absolute;
     z-index: 10;
     display: none;
-    height: 44dvw;
-    max-height: 44rem;
-    width: 2dvw;
-    top: clamp(2rem, 4dvw, 4rem);
-    left: auto;
-    right: auto;
+    width: 100%;
+    top: 0;
+    left: 0;
     opacity: 0;
     background-color: #ffffffef;
     border: 1px solid;
     border-image-slice: 1;
     border-width: 1px;
-    border-image-source: linear-gradient(to right, #cecece25 0%, #cececeef 10%, #cececeef 90%, #cecece25 100%);;
-    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.17), 0px 4px 8px 0 rgba(0, 0, 0, 0.07);
+    border-image-source: linear-gradient(to top, #cecece71 0%, #cececeef 10%, #cececeef 90%, #cecece71 100%);;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.25), 0px 4px 8px 0 rgba(0, 0, 0, 0.07);
     transition-timing-function: ease;
 }
 
 .pItemClass {
-    position: absolute;
-    top: clamp(2rem, 4dvw, 4rem);
-    left: 0;
-    width: 36dvw;
-    max-width: 36rem;
+    position: relative;
+    margin-top: -10rem;
+    width: 100%;
     z-index: 11;
     padding: 0.7dvw;
+    display: none;
+    opacity: 0;
 }
 
 .pItemClass ul {
@@ -303,25 +301,6 @@ p {
     line-height: 1.2rem;
 }
 
-#item-01 {
-    opacity: 0;
-    display: none;
-}
-
-#item-02 {
-    opacity: 0;
-    display: none;
-}
-
-#item-03 {
-    opacity: 0;
-    display: none;
-}
-
-#item-04 {
-    opacity: 0;
-    display: none;
-}
 
 #clickToExitBox {
     position: absolute;
