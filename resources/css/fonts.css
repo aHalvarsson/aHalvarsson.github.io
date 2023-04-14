@@ -1,143 +1,157 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap);
 @font-face {
-    font-family: metro;
-    src: url('../fonts/Metropolis-Light.otf') format('OpenType');
-    font-weight: 300;
-    font-style: normal
+  font-family: metro;
+  src: url('../fonts/Metropolis-Light.otf') format('OpenType');
+  font-weight: 300;
+  font-style: normal
 }
-
 @font-face {
-    font-family: metro;
-    src: url('../fonts/Metropolis-Regular.otf') format('OpenType');
-    font-weight: 400;
-    font-style: normal
+  font-family: metro;
+  src: url('../fonts/Metropolis-Regular.otf') format('OpenType');
+  font-weight: 400;
+  font-style: normal
 }
-
 @font-face {
-    font-family: metro;
-    src: url('../fonts/Metropolis-Medium.otf') format('OpenType');
-    font-weight: 500;
-    font-style: normal
+  font-family: metro;
+  src: url('../fonts/Metropolis-Medium.otf') format('OpenType');
+  font-weight: 500;
+  font-style: normal
 }
-
 @font-face {
-    font-family: metro;
-    src: url('../fonts/Metropolis-SemiBold.otf') format('OpenType');
-    font-weight: 600;
-    font-style: normal
+  font-family: metro;
+  src: url('../fonts/Metropolis-SemiBold.otf') format('OpenType');
+  font-weight: 600;
+  font-style: normal
 }
-
 @font-face {
-    font-family: metro;
-    src: url('../fonts/Metropolis-Bold.otf') format('OpenType');
-    font-weight: 700;
-    font-style: normal
+  font-family: metro;
+  src: url('../fonts/Metropolis-Bold.otf') format('OpenType');
+  font-weight: 700;
+  font-style: normal
 }
-
-
 html {
-    font-family: 'metro', Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: #000;
+  font-family: metro,Arial,Helvetica,sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000
 }
-
-.prefix, .suffix {
-    font-size: 0.9rem;
-    color: #bbb;
+.prefix,
+.suffix {
+  font-size: .9rem;
+  color: #bbb
 }
-  
 .bracket {
-    color: #bbbbbb;
-    font-size: 1rem;
+  color: #bbb;
+  font-size: 1rem
 }
-
 .button-text {
-    color: #ffffff;
-    font-size: 1.2rem;
-    font-weight: 500;
-    transition: font-size 0.25s, color 1s;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: font-size .25s,color 1s
 }
-
+nav li:hover .button-text {
+  font-size: 1.2rem;
+  color: #f0d909
+}
 #logoDiv {
-    writing-mode: vertical-lr;
+  writing-mode: vertical-lr
 }
-
 h1 {
-    font-size: 3.75rem;
-    font-weight: 600;
-    line-height: 3.75rem;
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-size: 3.75rem;
+  font-weight: 600;
+  line-height: 3.75rem;
+  font-family: Poppins,Arial,Helvetica,sans-serif
 }
-
 #codeDiv {
-    font-size: 0.9rem;
-    letter-spacing: 0.05rem;
+  font-size: .9rem;
+  letter-spacing: .05rem
 }
-
 #codeDiv ol {
-    font-weight: 500;
+  font-weight: 500
 }
-
 #codeDiv li:before {
-    font-weight: 300;
-    color: #337792;
+  font-weight: 300;
+  color: #337792
 }
-
 #terminal {
-    font-size: 0.9rem;
-    letter-spacing: 0.05rem;
-    font-weight: 400;
+  font-size: .9rem;
+  letter-spacing: .05rem;
+  font-weight: 400
 }
-
 .term {
-    color: #424242;
+  color: #424242
 }
-
 #terminal h2 {
-    letter-spacing: 0.03rem;
-    line-height: 1.3rem;
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin: 0.8rem 0;
+  letter-spacing: .03rem;
+  line-height: 1.3rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: .8rem 0
 }
-
+.pItemClass ul {
+  font-size: .95rem;
+  font-weight: 500;
+  line-height: 1.2rem
+}
+h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--font-red)
+}
+#about h2,
+#contact h2,
+.pItemClass h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  font-family: Poppins,Arial,Helvetica,sans-serif;
+  color: #000
+}
+p {
+  padding-left: 1.4dvw;
+  margin-top: .4dvw;
+  font-size: .95rem;
+  font-weight: 500;
+  line-height: 1.2rem
+}
 .portfolioDiv figcaption {
-    font-weight: 500;
-    font-size: 2.5rem;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: var(--font-red);
+  letter-spacing: .1rem
 }
-
+#contactWays > *,
+#skills > * {
+  font-size: 2em
+}
+i[aria-label]:after {
+  font-size: 1rem;
+  font-family: metro,Arial,Helvetica,sans-serif;
+  font-weight: 500
+}
 .blue {
-    color: var(--font-blue);
+  color: var(--font-blue)
 }
-
 .red {
-    color: var(--font-red);
+  color: var(--font-red)
 }
-
 .green {
-    color: var(--font-green);
+  color: var(--font-green)
 }
-
 .yellow {
-    color: var(--font-yellow);
+  color: var(--font-yellow)
 }
-
 .grey {
-    color: var(--font-grey);
+  color: var(--font-grey)
 }
-
 .black {
-    color: #000;
+  color: #000
 }
-
 .bold {
-    font-weight: 600;
+  font-weight: 600
 }
-
 footer {
-    color: var(--font-grey);
-    font-size: 0.8rem;
-    font-weight: 300;
+  color: var(--font-grey);
+  font-size: .8rem;
+  font-weight: 300
 }

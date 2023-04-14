@@ -13,22 +13,24 @@
     <body>
         
         <div id="bodyContainer">
-            <figure class="portfolioDiv">
-                <figcaption id="projectPortfolioCaption" class="portTitle">projectPortfolio</figcaption>
-                <div class="imgBox">
-                  <img src="./resources/images/projectPortfolio.jpg" alt="Screenshot of this very page" class="portfolioImg" aria-labelledby="projectPortfolioCaption" />
-                </div>
-            </figure>
-            <figure class="portfolioDiv">
-                <figcaption id="projectInSpaceCaption" class="portTitle">projectInSpace</figcaption>
-                <div class="imgBox">
-                    <img src="./resources/images/astro.jpg" alt="An astronaut programming on a laptop on the moon with the sun in the background." class="portfolioImg" aria-labelledby="projectInSpaceCaption" />
-                </div>
-            </figure>
+            <section id="leftSidePortfolio" aria-label="Left side of main page. Images of half of the portfolio items are here, other half on right side of main.">
+                <figure class="portfolioDiv">
+                    <figcaption id="projectPortfolioCaption" class="portTitle">projectPortfolio</figcaption>
+                    <div class="imgBox">
+                    <img src="./resources/images/projectPortfolio.jpg" alt="Screenshot of this very page" class="portfolioImg" aria-labelledby="projectPortfolioCaption" />
+                    </div>
+                </figure>
+                <figure class="portfolioDiv">
+                    <figcaption id="projectInSpaceCaption" class="portTitle">projectInSpace</figcaption>
+                    <div class="imgBox">
+                        <img src="./resources/images/astro.jpg" alt="An astronaut programming on a laptop on the moon with the sun in the background." class="portfolioImg" aria-labelledby="projectInSpaceCaption" />
+                    </div>
+                </figure>
+            </section>
             <div id="mainDiv">
                 <header id="mainHeader">
                     <nav>
-                        <ul>
+                        <ul id="siteMenu">
                             <li id="portfolioBtn">
                                 <span aria-hidden="true">
                                     <span class="prefix">a.link</span><span class="bracket">(</span>
@@ -165,6 +167,15 @@
                             <h3>images:</h3>
             
                             <h3>tools used:</h3>
+                            <div id="skills">
+                                <i role="img" aria-label="HTML 5" class="iconA-html5"></i>
+                                <i role="img" aria-label="CSS 3"class="iconA-CSS3"></i>
+                                <i role="img" aria-label="JavaScript" class="iconA-JS"></i>
+                                <i role="img" aria-label="git" class="iconA-git"></i>
+                                <i role="img" aria-label="Chrome DevTools" class="iconA-chrome"></i>
+                                <i role="img" aria-label="Terminal" class="iconA-terminal"></i>
+                                <i role="img" aria-label="GitHub" class="iconA-github"></i>
+                                </div>
                             
                         </article>
             
@@ -301,18 +312,20 @@
 
                 </main>
             </div>
-            <figure class="portfolioDiv">
-                <figcaption id="spacejumpersCaption" class="portTitle">spacejumpers</figcaption>
-                <div class="imgBox">
-                  <img src="./resources/images/spacejumpers.jpg" alt="Screenshot of the Spacejumpers webpage. An astronaut jumping on an alien planet." class="portfolioImg" aria-labelledby="spacejumpersCaption" />
-                </div>
-            </figure>
-            <figure class="portfolioDiv">
-                <figcaption id="craneWarriorsCaption" class="portTitle">craneWarriors</figcaption>
-                <div class="imgBox">
-                  <img src="./resources/images/craneWarriors.jpg" alt="Screenshot of the Crane Warriors webpage. Title showing on top of orange sunset." class="portfolioImg" aria-labelledby="craneWarriorsCaption" />
-                </div>
-            </figure>
+            <section id="rightSidePortfolio" aria-label="Right side of main page. Images of half of the portfolio items are here, other half on left side of main.">
+                <figure class="portfolioDiv">
+                    <figcaption id="spacejumpersCaption" class="portTitle">spacejumpers</figcaption>
+                    <div class="imgBox">
+                    <img src="./resources/images/spacejumpers.jpg" alt="Screenshot of the Spacejumpers webpage. An astronaut jumping on an alien planet." class="portfolioImg" aria-labelledby="spacejumpersCaption" />
+                    </div>
+                </figure>
+                <figure class="portfolioDiv">
+                    <figcaption id="craneWarriorsCaption" class="portTitle">craneWarriors</figcaption>
+                    <div class="imgBox">
+                    <img src="./resources/images/craneWarriors.jpg" alt="Screenshot of the Crane Warriors webpage. Title showing on top of orange sunset." class="portfolioImg" aria-labelledby="craneWarriorsCaption" />
+                    </div>
+                </figure>
+            </section>
 
         </div>
 
