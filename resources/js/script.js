@@ -3,6 +3,8 @@ const exitBox = document.getElementById('clickToExitBox'); //Selects the div tha
 const portWindow = document.getElementById('portfolio'); //The portfolio text background
 const pItemArt = document.querySelectorAll('.pItemClass'); //The different portfolio text items
 const pageMenu = document.getElementById('siteMenu'); //Main site menu
+const thumbnailContainer = document.querySelector('.thumbnailContainer');
+const thumbnails = document.querySelectorAll('.thumbnails');
 
 
 let portWindowOpen = false; //Used to stop the user from starting several actions at the same time.
@@ -12,19 +14,65 @@ let portWindowFinish = true; //As above
 let sameIndex;
 let portItem;
 
+const thumbnailHover = () => {
+
+    thumbnails.forEach((thumbnail) => {
+        thumbnail.addEventListener('mouseover', showFullImage);
+        thumbnail.addEventListener('mouseout', hideFullImage);
+      });
+}
+
+const showFullImage = (event) => {
+    const target = event.target;
+    if (target.tagName !== 'IMG') {
+      return;
+    }
+    const fullImage = document.createElement('img');
+  fullImage.src = target.src;
+  fullImage.classList.add('full-image'); // Add this line to add the full-image class
+  fullImage.style.opacity = '0';
+  fullImage.style.width = 16 + 'rem';
+  fullImage.style.height = 16 + 'rem';
+  fullImage.style.transition = 'opacity 0.75s, width 0.25s, height 0.25s';
+
+    setTimeout(() => {
+        fullImage.style.opacity = '1';
+        fullImage.style.width = 26 + 'rem';
+        fullImage.style.height = 26 + 'rem';
+    },10)
+
+  target.parentElement.appendChild(fullImage);
+  };
+  
+  const hideFullImage = (event) => {
+    const target = event.target;
+    if (target.tagName !== 'IMG') {
+      return;
+    }
+  
+    const fullImage = target.parentElement.querySelector('.full-image');
+    if (fullImage) {
+      target.parentElement.removeChild(fullImage);
+    }
+  };
+
 //Look for and find the right portfoliotext to the image clicked
 const searchForIndex = term => [...portImg].indexOf(term);
 
 //Portfolio image hover. Width increases and grayscale goes down to zero
 const portImgHover = event => {
-    const img = event.currentTarget.querySelector('img');
+    const img = event
+        .currentTarget
+        .querySelector('img');
     img.style.filter = 'grayscale(0%)';
     event.currentTarget.style.width = '8dvw';
 };
 
 //Portfolio image mouse out. Width and grayscale goes back to starting position
 const portImgOut = event => {
-    const img = event.currentTarget.querySelector('img');
+    const img = event
+        .currentTarget
+        .querySelector('img');
     img.style.filter = 'grayscale(100%)';
     event.currentTarget.style.width = '5.75dvw';
 };
@@ -56,27 +104,31 @@ const portImgClick = event => {
 
         let pHeight = pItemArt[sameIndex].offsetHeight; //Get hight from portfolio item.
 
-        if(pHeight < 704) pHeight = 48;
-        else pHeight = (pHeight/16) + 5.5; //Check and set min-height
+        if (pHeight < 704) 
+            pHeight = 48;
+        else 
+            pHeight = (pHeight / 16) + 5.5; //Check and set min-height
         
         //Start showing the portfolio item
         pItemArt[sameIndex].style.opacity = '1';
         pItemArt[sameIndex].style.marginTop = 4 + 'rem';
         pItemArt[sameIndex].style.transition = 'opacity 1.5s, margin 1s';
-        
-        //Start showing the portfolio background and set the hight to earlier calculations
+
+        // Start showing the portfolio background and set the hight to earlier
+        // calculations
         portWindow.style.opacity = '0.9';
         portWindow.style.height = pHeight + 'rem';
         portWindow.style.transition = 'height 1s, opacity 1.5s';
-    
-        //exitBox transists from 0 to 1 in opacity
-        exitBox.style.opacity = '1';      
 
-        //The clicked portfolio image on top 
+        //exitBox transists from 0 to 1 in opacity
+        exitBox.style.opacity = '1';
+
+        //The clicked portfolio image on top
         portItem.style.zIndex = '15';
 
         setTimeout(() => {
             exitBox.addEventListener('click', abortPortfolio); //Put back exitBox event listener
+            thumbnailHover();
             portWindowFinish = true; //The portfolio opening is finished. Ready for users next action
         }, 2500);
 
@@ -87,7 +139,7 @@ const portImgClick = event => {
 
 const abortPortfolio = () => { //Close portfolio. Can be called by exitbox click and click on active portfolio image
     portWindowFinish = false; //New portfolio window action begin. Stop other user input
-    
+
     //Resets all values to start position.
 
     exitBox.style.opacity = '0'; //Fade away exitbox
@@ -96,24 +148,27 @@ const abortPortfolio = () => { //Close portfolio. Can be called by exitbox click
     portWindow.style.height = '0';
     portWindow.style.opacity = '0';
     portWindow.style.transition = 'height 1s, opacity 1s';
-    
+
     //Fade and move away the portfolio item
     pItemArt[sameIndex].style.opacity = '0';
     pItemArt[sameIndex].style.marginTop = -10 + 'rem';
     pItemArt[sameIndex].style.transition = 'opacity 1.5s, margin 1s';
 
     //Reset the clicked portfolio image and turn on mouseout event again
-    portItem.addEventListener('mouseout', portImgOut); 
-    portItem.querySelector('img').style.filter = 'grayscale(100%)';
+    portItem.addEventListener('mouseout', portImgOut);
+    portItem
+        .querySelector('img')
+        .style
+        .filter = 'grayscale(100%)';
     portItem.style.width = '5.75dvw';
-    
+
     setTimeout(() => { //Giv the transitions time before turning of displays
         pItemArt[sameIndex].style.display = 'none';
         portWindow.style.display = 'none';
         exitBox.style.display = 'none';
-        
+
         portItem.style.zIndex = 'auto';
-        
+
         portWindowOpen = false;
         portWindowFinish = true;
     }, 1000)
@@ -123,10 +178,10 @@ const abortPortfolio = () => { //Close portfolio. Can be called by exitbox click
 //Takes an id and scrolls the window to that element
 const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
-    section.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+    section.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
 };
 
-//Function for the main menu. 
+//Function for the main menu.
 const pressButton = event => {
     let element = event.target;
     if (element.tagName === 'SPAN') {
@@ -136,10 +191,10 @@ const pressButton = event => {
     if (element.tagName !== 'LI') { //Checkes to se if the event target is an LI of our menu UL
         return;
     }
-    
+
     switch (element.id) { //Match event target with right button and then send right id to the scroll to function
         case 'portfolioBtn':
-            window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+            window.scroll({top: 0, left: 0, behavior: 'smooth'});
             break;
         case 'aboutBtn':
             scrollToSection('about');
@@ -159,5 +214,6 @@ portImg.forEach(element => {
     element.addEventListener('click', portImgClick);
 });
 
-//Click anywhere outside the portfolio window when open you hit this div and the exit portfolio action begins
+// Click anywhere outside the portfolio window when open you hit this div and the
+// exit portfolio action begins
 exitBox.addEventListener('click', abortPortfolio);

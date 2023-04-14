@@ -284,8 +284,35 @@ p {
   margin-top: .4dvw;
   text-align: center
 }
+.thumbnailContainer {
+    display: flex;
+    width: 100%;
+    margin-top: .4dvw;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-flow: row nowrap;
+    column-gap: 0.8rem;
+}
+.thumbnails {
+    border: 1px solid #bebebe;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    height: auto;
+    flex: 2 2 7rem;
+    position: relative;
+}
+.full-image {
+position: absolute;
+left: 50%;
+top: 60%;
+transform: translate(-50%, 0);
+z-index: 20;
+box-shadow: rgba(50, 50, 93, 0.25) 4px 13px 27px -5px, rgba(0, 0, 0, 0.3) 2px 8px 16px -8px;
+opacity: 0;
+max-inline-size: none;
+max-block-size: none;
+}
 i {
-  position: relative
+  position: relative;
 }
 i[aria-label]:after {
   opacity: 0;
@@ -299,7 +326,7 @@ i[aria-label]:after {
   border: 1px solid #afafaf;
   background: rgba(255,255,255,.877);
   transition: opacity .5s;
-  pointer-events: none
+  pointer-events: none;
 }
 i[aria-label]:hover:after {
   opacity: 1;
