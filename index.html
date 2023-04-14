@@ -1,331 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>a.Halvarsson - portfolio</title>
-        <link href="./resources/css/reset.css" rel="stylesheet" />
-        <link href="./resources/css/style.css" rel="stylesheet" />
-        <link href="./resources/css/fonts.css" rel="stylesheet" />
-        <link href="./resources/css/icons.css" rel="stylesheet" />
-        
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    </head>
-    <body>
-        
-        <div id="bodyContainer">
+
+<head>
+    <title>a.Halvarsson - portfolio</title>
+    <link href="./resources/css/reset.css" rel="stylesheet" />
+    <link href="./resources/css/style.css" rel="stylesheet" />
+    <link href="./resources/css/fonts.css" rel="stylesheet" />
+    <link href="./resources/css/icons.css" rel="stylesheet" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+    <div id="bodyContainer">
+        <section id="leftSidePortfolio"
+            aria-label="Left side of main page. Images of half of the portfolio items are here, other half on right side of main.">
             <figure class="portfolioDiv">
                 <figcaption id="projectPortfolioCaption" class="portTitle">projectPortfolio</figcaption>
                 <div class="imgBox">
-                  <img src="./resources/images/projectPortfolio.jpg" alt="Screenshot of this very page" class="portfolioImg" aria-labelledby="projectPortfolioCaption" />
+                    <img src="./resources/images/projectPortfolio.jpg" alt="Screenshot of this very page"
+                        class="portfolioImg" aria-labelledby="projectPortfolioCaption" />
                 </div>
             </figure>
             <figure class="portfolioDiv">
                 <figcaption id="projectInSpaceCaption" class="portTitle">projectInSpace</figcaption>
                 <div class="imgBox">
-                    <img src="./resources/images/astro.jpg" alt="An astronaut programming on a laptop on the moon with the sun in the background." class="portfolioImg" aria-labelledby="projectInSpaceCaption" />
+                    <img src="./resources/images/astro.jpg"
+                        alt="An astronaut programming on a laptop on the moon with the sun in the background."
+                        class="portfolioImg" aria-labelledby="projectInSpaceCaption" />
                 </div>
             </figure>
-            <div id="mainDiv">
-                <header id="mainHeader">
-                    <nav>
-                        <ul>
-                            <li id="portfolioBtn">
-                                <span aria-hidden="true">
-                                    <span class="prefix">a.link</span><span class="bracket">(</span>
-                                </span>
-                                <span class="button-text">'portfolio'</span>
-                                <span aria-hidden="true">
-                                    <span class="bracket">)</span><span class="suffix">;</span>
-                                </span>
+        </section>
+        <div id="mainDiv">
+            <header id="mainHeader">
+                <nav>
+                    <ul id="siteMenu">
+                        <li id="portfolioBtn">
+                            <span aria-hidden="true">
+                                <span class="prefix">a.link</span><span class="bracket">(</span>
+                            </span>
+                            <span class="button-text">'portfolio'</span>
+                            <span aria-hidden="true">
+                                <span class="bracket">)</span><span class="suffix">;</span>
+                            </span>
+                        </li>
+                        <li id="aboutBtn">
+                            <span aria-hidden="true">
+                                <span class="prefix">a.link</span><span class="bracket">(</span>
+                            </span>
+                            <span class="button-text">'about'</span>
+                            <span aria-hidden="true">
+                                <span class="bracket">)</span><span class="suffix">;</span>
+                            </span>
+                        </li>
+                        <li id="contactBtn">
+                            <span aria-hidden="true">
+                                <span class="prefix">a.link</span><span class="bracket">(</span>
+                            </span>
+                            <span class="button-text">'contact'</span>
+                            <span aria-hidden="true">
+                                <span class="bracket">)</span><span class="suffix">;</span>
+                            </span>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <section id="welcome">
+                    <div id="aObject">
+                        <div id="logoDiv">
+                            <a href="index.html" target="_self">
+                                <h1>a.Halvarsson</h1>
+                            </a>
+                        </div>
+                        <div id="codeDiv"
+                            aria-label="A JavaScript code snippet illustrating the welcome message creation">
+                            <span class="grey">C: > a > Halvarsson ><u class="yellow bold"> JS</u> welcome.js >
+                                ...</span>
+
+                            <ol>
+                                <li><u class="blue">const</u> a = <u class="blue">{</u></li>
+                                <li><span class="indent">_Halvarsson : <u class="red">'Hello and welcome!'</u>,</span>
+                                </li>
+                                <li><span class="indent">_name : <u class="red">'Anders Halvarsson'</u>,</span></li>
+                                <li><span class="indent">_work : <u class="red">'Front End Web Developer'</u>,</span>
+                                </li>
+                                <li><span class="indent"><u class="blue">get</u> Halvarsson <u class="green">()
+                                            {</u></span></li>
+                                <li><span class="double-indent"><u class="blue">return this</u>._Halvarsson;</span></li>
+                                <li><span class="indent"><u class="green">}</u>,</span></li>
+                                <li><span class="indent"><u class="blue">get</u> name <u class="green">() {</u></span>
+                                </li>
+                                <li><span class="double-indent"><u class="blue">return this</u>._name;</span></li>
+                                <li><span class="indent"><u class="green">}</u>,</span></li>
+                                <li><span class="indent"><u class="blue">get</u> work <u class="green">() {</u></span>
+                                </li>
+                                <li><span class="double-indent"><u class="blue">return this</u>._work;</span></li>
+                                <li><span class="indent"><u class="green">}</u>,</span></li>
+                                <li><span class="indent">link<u class="green">(</u>wTo<u class="green">) {</u></span>
+                                </li>
+                                <li><span class="indent">window.location.href = <u class="red">'./'</u> + wTo;</span>
+                                </li>
+                                <li><span class="indent"><u class="green">}</u></span></li>
+                                <li><u class="blue">}</u></li>
+                                <li>&#8195</li>
+                                <li>console.log<u class="blue">(<u class="red">`<u class="green">${</u><u
+                                                class="black">a.Halvarsson</u><u class="green">}</u> My name is <u
+                                                class="green">${</u><u class="black">a.name</u><u
+                                                class="green">}</u>.`</u>)</u>;</li>
+                                <li>console.log<u class="blue">(<u class="red">`I’m a <u class="green">${</u><u
+                                                class="black">a.work</u><u class="green">}</u> and this is my
+                                            portfolio.`</u>)</u>;</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div id="terminal" aria-label="Welcome message in form of a programming terminal.">
+                        <span class="term">TERMINAL</span>
+                        <div id="terminalText">
+                            <span class="grey">C:\a\Halvarsson ><u class="yellow bold"> node</u> welcome.js</span>
+
+                            <h2>Hello and welcome! My name is Anders Halvarsson.<br />
+                                I’m a Front End Web Developer and this is my portfolio.</h2>
+
+                            <span class="grey">C:\a\Halvarsson > █</span>
+
+                        </div>
+                    </div>
+                </section>
+
+                <section id="portfolio">
+
+                    <article class="pItemClass" id="item-01">
+
+                        <header>
+                            <h3>project:</h3>
+                            <h2>portfolio</h2>
+                        </header>
+                        <h3>description:</h3>
+                        <p>
+                            The website you are currently viewing was developed as part of a Codecademy assignment
+                            during my study path. The primary goal was to create a platform where I could showcase my
+                            skills and the projects I've built. The assignment came with specific guidelines and
+                            requirements, as listed below.
+                        </p>
+
+                        <h3>project objectives:</h3>
+
+                        <ul role="list">
+                            <li>
+                                Develop a website using HTML and CSS.
                             </li>
-                            <li id="aboutBtn">
-                                <span aria-hidden="true">
-                                    <span class="prefix">a.link</span><span class="bracket">(</span>
-                                  </span>
-                                  <span class="button-text">'about'</span>
-                                  <span aria-hidden="true">
-                                    <span class="bracket">)</span><span class="suffix">;</span>
-                                  </span>
+                            <li>
+                                Implement at least one interactive feature using JavaScript.
                             </li>
-                            <li id="contactBtn">
-                                <span aria-hidden="true">
-                                    <span class="prefix">a.link</span><span class="bracket">(</span>
-                                  </span>
-                                  <span class="button-text">'contact'</span>
-                                  <span aria-hidden="true">
-                                    <span class="bracket">)</span><span class="suffix">;</span>
-                                  </span>
+                            <li>
+                                Employ Git version control for efficient project management.
+                            </li>
+                            <li>
+                                Utilize command-line tools and file navigation techniques.
+                            </li>
+                            <li>
+                                Work on the project locally on a personal computer.
+                            </li>
+                            <li>
+                                Deploy the site to the web using GitHub Pages.
                             </li>
                         </ul>
-                    </nav>
-                </header>
-                <main>
-                    <section id="welcome">
-                        <div id="aObject">
-                            <div id="logoDiv">
-                                <a href="index.html" target="_self"><h1>a.Halvarsson</h1></a>
-                            </div>
-                            <div id="codeDiv" aria-label="A JavaScript code snippet illustrating the welcome message creation">
-                                <span class="grey">C: > a > Halvarsson ><u class="yellow bold"> JS</u> welcome.js > ...</span>
 
-                                <ol>
-                                    <li><u class="blue">const</u> a = <u class="blue">{</u></li>
-                                    <li><span class="indent">_Halvarsson : <u class="red">'Hello and welcome!'</u>,</span></li>
-                                    <li><span class="indent">_name : <u class="red">'Anders Halvarsson'</u>,</span></li>
-                                    <li><span class="indent">_work : <u class="red">'Front End Web Developer'</u>,</span></li>
-                                    <li><span class="indent"><u class="blue">get</u> Halvarsson <u class="green">() {</u></span></li>
-                                    <li><span class="double-indent"><u class="blue">return this</u>._Halvarsson;</span></li>
-                                    <li><span class="indent"><u class="green">}</u>,</span></li>
-                                    <li><span class="indent"><u class="blue">get</u> name <u class="green">() {</u></span></li>
-                                    <li><span class="double-indent"><u class="blue">return this</u>._name;</span></li>
-                                    <li><span class="indent"><u class="green">}</u>,</span></li>
-                                    <li><span class="indent"><u class="blue">get</u> work <u class="green">() {</u></span></li>
-                                    <li><span class="double-indent"><u class="blue">return this</u>._work;</span></li>
-                                    <li><span class="indent"><u class="green">}</u>,</span></li>
-                                    <li><span class="indent">link<u class="green">(</u>wTo<u class="green">) {</u></span></li>
-                                    <li><span class="indent">window.location.href = <u class="red">'./'</u> + wTo;</span></li>
-                                    <li><span class="indent"><u class="green">}</u></span></li>
-                                    <li><u class="blue">}</u></li>
-                                    <li>&#8195</li>
-                                    <li>console.log<u class="blue">(<u class="red">`<u class="green">${</u><u class="black">a.Halvarsson</u><u class="green">}</u> My name is <u class="green">${</u><u class="black">a.name</u><u class="green">}</u>.`</u>)</u>;</li>
-                                    <li>console.log<u class="blue">(<u class="red">`I’m a <u class="green">${</u><u class="black">a.work</u><u class="green">}</u> and this is my portfolio.`</u>)</u>;</li>
-                                </ol>
-                            </div>
-                        </div>
-                        <div id="terminal" aria-label="Welcome message in form of a programming terminal.">
-                            <span class="term">TERMINAL</span>
-                            <div id="terminalText">
-                                <span class="grey">C:\a\Halvarsson ><u class="yellow bold"> node</u> welcome.js</span>
-
-                                <h2>Hello and welcome! My name is Anders Halvarsson.<br />
-                                    I’m a Front End Web Developer and this is my portfolio.</h2>
-                                
-                                <span class="grey">C:\a\Halvarsson > █</span>
-                            
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="portfolio">
-
-                        <article class="pItemClass" id="item-01">
-                            <header><h3>project:</h3><h2>portfolio</h2></header>
-                            <h3>description:</h3>
-                            <p>
-                                The website you are currently viewing was developed as part of a Codecademy assignment during my study path. The primary goal was to create a platform where I could showcase my skills and the projects I've built. The assignment came with specific guidelines and requirements, as listed below. 
-                            </p>
-            
-                            <h3>project objectives:</h3>
-                            
-                            <ul role="list">
-                                <li>
-                                    Develop a website using HTML and CSS.
-                                </li>
-                                <li>
-                                    Implement at least one interactive feature using JavaScript.
-                                </li>
-                                <li>
-                                    Employ Git version control for efficient project management.
-                                </li>
-                                <li>
-                                    Utilize command-line tools and file navigation techniques.
-                                </li>
-                                <li>
-                                    Work on the project locally on a personal computer.
-                                </li>
-                                <li>
-                                    Deploy the site to the web using GitHub Pages.
-                                </li>
-                            </ul>
-                            
-            
-                            <h3>prerequisites:</h3>
-                            <p>
-                                To successfully complete this assignment, the following skills were required: 
-                            </p>
-                            <ul>
-                                <li>
-                                    Proficiency in HTML and CSS for web design.
-                                </li>
-                                <li>
-                                    Knowledge of JavaScript for adding interactivity.
-                                </li>
-                                <li>
-                                    Familiarity with Git and GitHub for version control.
-                                </li>
-                                <li>
-                                    Competence in command-line usage and file navigation.
-                                </li>
-                            </ul>
-                            <p>
-                                This project demonstrates my ability to integrate various web technologies and tools to create a functional and visually appealing website that highlights my accomplishments and creations.
-                            </p>
-            
-                            <h3>images:</h3>
-            
-                            <h3>tools used:</h3>
-                        </article>
-            
-                        <article class="pItemClass" id="item-02">
-                            <header><h3>project:</h3><h2>portfolio</h2></header>
-                            <h3>description:</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed vulputate eros mi a nunc. Nullam at sagittis eros. Aenean consectetur nulla eget ex sollicitudin faucibus. 
-                            </p>
-            
-                            <h3>project objectives:</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed vulputate eros mi a nunc. 
-                            </p>
-            
-                            <h3>prerequisites:</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed vulputate eros mi a nunc. 
-                            </p>
-            
-                            <h3>images:</h3>
-            
-                            <h3>tools used:</h3>
-                        </article>
-            
-                        <article class="pItemClass" id="item-03">
-                            <header><h3>project:</h3><h2>inSpace</h2></header>
-                            <h3>description:</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed vulputate eros mi a nunc. Nullam at sagittis eros. Aenean consectetur nulla eget ex sollicitudin faucibus. 
-                            </p>
-            
-                            <h3>project objectives:</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed vulputate eros mi a nunc. 
-                            </p>
-            
-                            <h3>prerequisites:</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed vulputate eros mi a nunc. 
-                            </p>
-            
-                            <h3>images:</h3>
-            
-                            <h3>tools used:</h3>
-                        </article>
-
-                        <article class="pItemClass" id="item-04">
-                            <header><h3>project:</h3><h2>inSpace</h2></header>
-                            <h3>description:</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed vulputate eros mi a nunc. Nullam at sagittis eros. Aenean consectetur nulla eget ex sollicitudin faucibus. 
-                            </p>
-            
-                            <h3>project objectives:</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed vulputate eros mi a nunc. 
-                            </p>
-            
-                            <h3>prerequisites:</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed vulputate eros mi a nunc. 
-                            </p>
-            
-                            <h3>images:</h3>
-            
-                            <h3>tools used:</h3>
-                        </article>
-
-                    </section>
-
-                    <section id="about">
-            
-                        <header><h2>about</h2></header>
-
-                        <h3>short bio:</h3>
+                        <h3>prerequisites:</h3>
                         <p>
-                            Hello! My name is Anders, and I'm a web developer based in Sweden. I'm happily married with children, and we share our home with a dog and a cat. My passion for web programming and design dates back to my early teens in the mid-1990s—a time when every webpage was filled with vibrant colors, animated GIFs, and the ever-present "under construction" sign in various forms.<br /><br />
-                            Although I've gained experience as a manager in other industries over the years, I've always maintained my own web development business on the side. Recently, I decided to fully immerse myself in programming and design, making it my primary focus. While I have primarily worked on front-end development, I've also dabbled in back-end projects.<br /><br />
-                            Currently, I'm expanding my skill set by studying to become a full-stack developer. This will allow me to not only create visually appealing client-side interfaces but also understand and build the underlying architecture that brings websites to life.</p>
-        
-                        <h3>education:</h3>
-                        <p>
-                            Much of my web development knowledge has been acquired through hands-on experience and self-directed courses. While I hold a formal university degree in 3D design, I have also completed university courses in JavaScript, HTML, CSS, industrial design, print design, and web design.
+                            To successfully complete this assignment, the following skills were required:
                         </p>
-        
-                        <h3>experience:</h3>
+                        <ul>
+                            <li>
+                                Proficiency in HTML and CSS for web design.
+                            </li>
+                            <li>
+                                Knowledge of JavaScript for adding interactivity.
+                            </li>
+                            <li>
+                                Familiarity with Git and GitHub for version control.
+                            </li>
+                            <li>
+                                Competence in command-line usage and file navigation.
+                            </li>
+                        </ul>
                         <p>
-                            As mentioned in my bio, I have been running my own design company for many years, dating back to when I was around 20 years old. Throughout this time, my business has occasionally served as my primary source of income, but more often, it has been a supplementary venture. My professional experience includes working as a web developer for various companies and as a print designer at a printing facility. Additionally, I have honed my leadership skills by serving as a manager in both retail and restaurant settings.
+                            This project demonstrates my ability to integrate various web technologies and tools to
+                            create a functional and visually appealing website that highlights my accomplishments and
+                            creations.
                         </p>
-        
-                        <h3>skills:</h3>
 
+                        <h3>images:</h3>
+
+                        <div class="thumbnailContainer">
+                            <figure class="thumbnails"><img src="./resources/images/projectPortfolio/screen01.jpg" alt="" /></figure>
+                            <figure class="thumbnails"><img src="./resources/images/projectPortfolio/screen02.jpg" alt="" /></figure>
+                            <figure class="thumbnails"><img src="./resources/images/projectPortfolio/screen03.jpg" alt="" /></figure>
+                            <figure class="thumbnails"><img src="./resources/images/projectPortfolio/screen04.jpg" alt="" /></figure>
+                        </div>
+
+                        <h3>tools used:</h3>
                         <div id="skills">
                             <i role="img" aria-label="HTML 5" class="iconA-html5"></i>
-                            <i role="img" aria-label="CSS 3"class="iconA-CSS3"></i>
+                            <i role="img" aria-label="CSS 3" class="iconA-CSS3"></i>
                             <i role="img" aria-label="JavaScript" class="iconA-JS"></i>
                             <i role="img" aria-label="git" class="iconA-git"></i>
                             <i role="img" aria-label="Chrome DevTools" class="iconA-chrome"></i>
                             <i role="img" aria-label="Terminal" class="iconA-terminal"></i>
                             <i role="img" aria-label="GitHub" class="iconA-github"></i>
-                            <i role="img" aria-label="WIX" class="iconA-wix"></i>   
-                            <i role="img" aria-label="Autodesk Maya" class="iconA-autodesk"></i>  
-                            <i role="img" aria-label="Adobe Photoshop"  class="iconA-ps"></i>
-                            <i role="img" aria-label="Adobe Illustrator"  class="iconA-ai"></i>
-                            <i role="img" aria-label="Adobe Indesign"  class="iconA-in"></i>
-                            <i role="img" aria-label="Excel and VBA" class="iconA-excel"></i>                     
-                          </div>
+                        </div>
 
-                    </section>
+                    </article>
 
-                    <section id="contact">
-                        <header><h2>contact</h2></header>
-                        <h3>let's get in touch</h3>
-                        <p>The best way to discover if we're a perfect match is to connect! I'm a problem solver and a creator at heart, so if you're seeking someone with these traits, you've come to the right place!</p>
-                        
-                        <h3>how should we "meet"?</h3>
-                        <p>There are countless ways for us to get acquainted—let's choose what works best for both of us. Email, phone, in-person, messenger, LinkedIn, SMS—you name it, I'm open to it! Just a heads-up: if you're not located in Sweden, arranging an in-person meeting might be a bit more challenging, but we can always find an alternative method to connect.
+                    <article class="pItemClass" id="item-02">
+                        <header>
+                            <h3>project:</h3>
+                            <h2>portfolio</h2>
+                        </header>
+                        <h3>description:</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus
+                            imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed
+                            vulputate eros mi a nunc. Nullam at sagittis eros. Aenean consectetur nulla eget ex
+                            sollicitudin faucibus.
                         </p>
-                        
-                        <h3>what will it be?</h3>
-                        <div id="contactWays">
-                            <i role="img" aria-label="E-mail" class="iconA-email"></i>
-                            <i role="img" aria-label="Phonecall" class="iconA-sPhone"></i>  
-                            <i role="img" aria-label="linkedIn" class="iconA-linkedin"></i>    
-                            <i role="img" aria-label="In-person" class="iconA-irl"></i>
-                            <i role="img" aria-label="Sms" class="iconA-sms"></i>
-                            <i role="img" aria-label="Messenger" class="iconA-messenger"></i>          
-                          </div>
 
+                        <h3>project objectives:</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus
+                            imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed
+                            vulputate eros mi a nunc.
+                        </p>
 
-                    </section>
+                        <h3>prerequisites:</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus
+                            imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed
+                            vulputate eros mi a nunc.
+                        </p>
 
+                        <h3>images:</h3>
 
-                </main>
-            </div>
+                        <h3>tools used:</h3>
+                    </article>
+
+                    <article class="pItemClass" id="item-03">
+                        <header>
+                            <h3>project:</h3>
+                            <h2>inSpace</h2>
+                        </header>
+                        <h3>description:</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus
+                            imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed
+                            vulputate eros mi a nunc. Nullam at sagittis eros. Aenean consectetur nulla eget ex
+                            sollicitudin faucibus.
+                        </p>
+
+                        <h3>project objectives:</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus
+                            imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed
+                            vulputate eros mi a nunc.
+                        </p>
+
+                        <h3>prerequisites:</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus
+                            imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed
+                            vulputate eros mi a nunc.
+                        </p>
+
+                        <h3>images:</h3>
+
+                        <h3>tools used:</h3>
+                    </article>
+
+                    <article class="pItemClass" id="item-04">
+                        <header>
+                            <h3>project:</h3>
+                            <h2>inSpace</h2>
+                        </header>
+                        <h3>description:</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus
+                            imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed
+                            vulputate eros mi a nunc. Nullam at sagittis eros. Aenean consectetur nulla eget ex
+                            sollicitudin faucibus.
+                        </p>
+
+                        <h3>project objectives:</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus
+                            imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed
+                            vulputate eros mi a nunc.
+                        </p>
+
+                        <h3>prerequisites:</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus
+                            imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed
+                            vulputate eros mi a nunc.
+                        </p>
+
+                        <h3>images:</h3>
+
+                        <h3>tools used:</h3>
+                    </article>
+
+                </section>
+
+                <section id="about">
+
+                    <header>
+                        <h2>about</h2>
+                    </header>
+
+                    <h3>short bio:</h3>
+                    <p>
+                        Hello! My name is Anders, and I'm a web developer based in Sweden. I'm happily married with
+                        children, and we share our home with a dog and a cat. My passion for web programming and design
+                        dates back to my early teens in the mid-1990s—a time when every webpage was filled with vibrant
+                        colors, animated GIFs, and the ever-present "under construction" sign in various
+                        forms.<br /><br />
+                        Although I've gained experience as a manager in other industries over the years, I've always
+                        maintained my own web development business on the side. Recently, I decided to fully immerse
+                        myself in programming and design, making it my primary focus. While I have primarily worked on
+                        front-end development, I've also dabbled in back-end projects.<br /><br />
+                        Currently, I'm expanding my skill set by studying to become a full-stack developer. This will
+                        allow me to not only create visually appealing client-side interfaces but also understand and
+                        build the underlying architecture that brings websites to life.</p>
+
+                    <h3>education:</h3>
+                    <p>
+                        Much of my web development knowledge has been acquired through hands-on experience and
+                        self-directed courses. While I hold a formal university degree in 3D design, I have also
+                        completed university courses in JavaScript, HTML, CSS, industrial design, print design, and web
+                        design.
+                    </p>
+
+                    <h3>experience:</h3>
+                    <p>
+                        As mentioned in my bio, I have been running my own design company for many years, dating back to
+                        when I was around 20 years old. Throughout this time, my business has occasionally served as my
+                        primary source of income, but more often, it has been a supplementary venture. My professional
+                        experience includes working as a web developer for various companies and as a print designer at
+                        a printing facility. Additionally, I have honed my leadership skills by serving as a manager in
+                        both retail and restaurant settings.
+                    </p>
+
+                    <h3>skills:</h3>
+
+                    <div id="skills">
+                        <i role="img" aria-label="HTML 5" class="iconA-html5"></i>
+                        <i role="img" aria-label="CSS 3" class="iconA-CSS3"></i>
+                        <i role="img" aria-label="JavaScript" class="iconA-JS"></i>
+                        <i role="img" aria-label="git" class="iconA-git"></i>
+                        <i role="img" aria-label="Chrome DevTools" class="iconA-chrome"></i>
+                        <i role="img" aria-label="Terminal" class="iconA-terminal"></i>
+                        <i role="img" aria-label="GitHub" class="iconA-github"></i>
+                        <i role="img" aria-label="WIX" class="iconA-wix"></i>
+                        <i role="img" aria-label="Autodesk Maya" class="iconA-autodesk"></i>
+                        <i role="img" aria-label="Adobe Photoshop" class="iconA-ps"></i>
+                        <i role="img" aria-label="Adobe Illustrator" class="iconA-ai"></i>
+                        <i role="img" aria-label="Adobe Indesign" class="iconA-in"></i>
+                        <i role="img" aria-label="Excel and VBA" class="iconA-excel"></i>
+                    </div>
+
+                </section>
+
+                <section id="contact">
+                    <header>
+                        <h2>contact</h2>
+                    </header>
+                    <h3>let's get in touch</h3>
+                    <p>The best way to discover if we're a perfect match is to connect! I'm a problem solver and a
+                        creator at heart, so if you're seeking someone with these traits, you've come to the right
+                        place!</p>
+
+                    <h3>how should we "meet"?</h3>
+                    <p>There are countless ways for us to get acquainted—let's choose what works best for both of us.
+                        Email, phone, in-person, messenger, LinkedIn, SMS—you name it, I'm open to it! Just a heads-up:
+                        if you're not located in Sweden, arranging an in-person meeting might be a bit more challenging,
+                        but we can always find an alternative method to connect.
+                    </p>
+
+                    <h3>what will it be?</h3>
+                    <div id="contactWays">
+                        <i role="img" aria-label="E-mail" class="iconA-email"></i>
+                        <i role="img" aria-label="Phonecall" class="iconA-sPhone"></i>
+                        <i role="img" aria-label="linkedIn" class="iconA-linkedin"></i>
+                        <i role="img" aria-label="In-person" class="iconA-irl"></i>
+                        <i role="img" aria-label="Sms" class="iconA-sms"></i>
+                        <i role="img" aria-label="Messenger" class="iconA-messenger"></i>
+                    </div>
+
+                </section>
+
+            </main>
+        </div>
+        <section id="rightSidePortfolio"
+            aria-label="Right side of main page. Images of half of the portfolio items are here, other half on left side of main.">
             <figure class="portfolioDiv">
                 <figcaption id="spacejumpersCaption" class="portTitle">spacejumpers</figcaption>
                 <div class="imgBox">
-                  <img src="./resources/images/spacejumpers.jpg" alt="Screenshot of the Spacejumpers webpage. An astronaut jumping on an alien planet." class="portfolioImg" aria-labelledby="spacejumpersCaption" />
+                    <img src="./resources/images/spacejumpers.jpg"
+                        alt="Screenshot of the Spacejumpers webpage. An astronaut jumping on an alien planet."
+                        class="portfolioImg" aria-labelledby="spacejumpersCaption" />
                 </div>
             </figure>
             <figure class="portfolioDiv">
                 <figcaption id="craneWarriorsCaption" class="portTitle">craneWarriors</figcaption>
                 <div class="imgBox">
-                  <img src="./resources/images/craneWarriors.jpg" alt="Screenshot of the Crane Warriors webpage. Title showing on top of orange sunset." class="portfolioImg" aria-labelledby="craneWarriorsCaption" />
+                    <img src="./resources/images/craneWarriors.jpg"
+                        alt="Screenshot of the Crane Warriors webpage. Title showing on top of orange sunset."
+                        class="portfolioImg" aria-labelledby="craneWarriorsCaption" />
                 </div>
             </figure>
+        </section>
 
-        </div>
+    </div>
 
-        <footer>
-            Copyright (C) 2023 | Anders Halvarsson
-        </footer>
+    <footer>
+        Copyright (C) 2023 | Anders Halvarsson
+    </footer>
 
-        <div id="portfolioItems">
-        
-        </div>
+    <div id="clickToExitBox">
 
-        <div id="clickToExitBox">
-            
-        </div>
+    </div>
 
-        <script src="./resources/js/script.js" defer></script> 
-    </body>
+    <script src="./resources/js/script.js" defer></script>
+</body>
+
 </html>
