@@ -52,23 +52,30 @@ const portImgClick = event => {
         mainDivPos = mainD.getBoundingClientRect().left + window.pageXOffset;
 
         let viewWidth = document.querySelector('html').clientWidth;
+        let viewHeight = document.querySelector('html').clientHeight;
         xPosDVW = (xPosition/viewWidth) * 100;
         sameIndex = searchForIndex(portItem);
 
         if(xPosition < (viewWidth/2)) {
             pItemArt[sameIndex].style.left = xPosDVW - 18 + 'dvw';
-            portWindow.style.left = xPosDVW + 3.5 + 'dvw';
+            portWindow.style.left = xPosDVW + 5.5 + 'dvw';
             clickLeft = true;
         } else {
             pItemArt[sameIndex].style.left = xPosDVW - 18 + 'dvw';
             portWindow.style.left = 'auto';
-            portWindow.style.right = (100 - xPosDVW) - 3.5 + 'dvw';
+            portWindow.style.right = (100 - xPosDVW) -5.5 + 'dvw';
             clickLeft = false;
         }
-        
+        pItemArt[sameIndex].style.display = 'block';
+        let pHeight = pItemArt[sameIndex].clientHeight;
+        window.alert(pHeight);
+        if(pHeight < 704) pHeight = 44;
+        else pHeight = pHeight/16 + 8;
+        window.alert(pHeight);
+        portWindow.style.minHeight = pHeight + 'rem';
         portItem.style.zIndex = '15';
         portWindow.style.display = 'block';
-        pItemArt[sameIndex].style.display = 'block';
+        
    
 
         setTimeout(() => {
@@ -76,9 +83,9 @@ const portImgClick = event => {
             portWindow.style.opacity = '0.9';
             exitBox.style.opacity = '1';
             if(clickLeft) {
-                portWindow.style.width = 97 - 5.75 - xPosDVW + 'dvw';
+                portWindow.style.width = 80 - 5.75 - xPosDVW + 'dvw';
             } else {
-                portWindow.style.width = 97 - (100 - xPosDVW) + 'dvw';
+                portWindow.style.width = 80 - (100 - xPosDVW) + 5.5 + 'dvw';
             }
             portWindow.style.transition = 'width 2s, opacity 1s';
             

@@ -14,15 +14,15 @@
         
         <div id="bodyContainer">
             <figure class="portfolioDiv">
-                <figcaption class="portTitle">projectPortfolio</figcaption>
+                <figcaption id="projectPortfolioCaption" class="portTitle">projectPortfolio</figcaption>
                 <div class="imgBox">
-                  <img src="./resources/images/penPen.jpg" alt="Pen Pen" class="portfolioImg" />
+                  <img src="./resources/images/projectPortfolio.jpg" alt="Screenshot of this very page" class="portfolioImg" aria-labelledby="projectPortfolioCaption" />
                 </div>
             </figure>
             <figure class="portfolioDiv">
-                <figcaption class="portTitle">projectInSpace</figcaption>
+                <figcaption id="projectInSpaceCaption" class="portTitle">projectInSpace</figcaption>
                 <div class="imgBox">
-                  <img src="./resources/images/robrob.jpg" alt="Pen Pen" class="portfolioImg" />
+                    <img src="./resources/images/astro.jpg" alt="An astronaut programming on a laptop on the moon with the sun in the background." class="portfolioImg" aria-labelledby="projectInSpaceCaption" />
                 </div>
             </figure>
             <div id="mainDiv">
@@ -63,9 +63,9 @@
                     <section id="welcome">
                         <div id="aObject">
                             <div id="logoDiv">
-                                <h1>a.Halvarsson</h1>
+                                <a href="index.html" target="_self"><h1>a.Halvarsson</h1></a>
                             </div>
-                            <div id="codeDiv" aria-hidden="true">
+                            <div id="codeDiv" aria-label="A JavaScript code snippet illustrating the welcome message creation">
                                 <span class="grey">C: > a > Halvarsson ><u class="yellow bold"> JS</u> welcome.js > ...</span>
 
                                 <ol>
@@ -92,7 +92,7 @@
                                 </ol>
                             </div>
                         </div>
-                        <div id="terminal">
+                        <div id="terminal" aria-label="Welcome message in form of a programming terminal.">
                             <span class="term">TERMINAL</span>
                             <div id="terminalText">
                                 <span class="grey">C:\a\Halvarsson ><u class="yellow bold"> node</u> welcome.js</span>
@@ -109,20 +109,56 @@
                     <section id="portfolio">
 
                         <article class="pItemClass" id="item-01">
-                            <header><h3>project:</h3><h2>penPenVSCode</h2></header>
+                            <header><h3>project:</h3><h2>portfolio</h2></header>
                             <h3>description:</h3>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed vulputate eros mi a nunc. Nullam at sagittis eros. Aenean consectetur nulla eget ex sollicitudin faucibus. 
+                                The website you are currently viewing was developed as part of a Codecademy assignment during my study path. The primary goal was to create a platform where I could showcase my skills and the projects I've built. The assignment came with specific guidelines and requirements, as listed below. 
                             </p>
             
                             <h3>project objectives:</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed vulputate eros mi a nunc. 
-                            </p>
+                            
+                            <ul role="list">
+                                <li>
+                                    Develop a website using HTML and CSS.
+                                </li>
+                                <li>
+                                    Implement at least one interactive feature using JavaScript.
+                                </li>
+                                <li>
+                                    Employ Git version control for efficient project management.
+                                </li>
+                                <li>
+                                    Utilize command-line tools and file navigation techniques.
+                                </li>
+                                <li>
+                                    Work on the project locally on a personal computer.
+                                </li>
+                                <li>
+                                    Deploy the site to the web using GitHub Pages.
+                                </li>
+                            </ul>
+                            
             
                             <h3>prerequisites:</h3>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id sapien eget purus imperdiet lobortis. In egestas, nisl ut maximus iaculis, lectus est finibus metus, sed vulputate eros mi a nunc. 
+                                To successfully complete this assignment, the following skills were required: 
+                            </p>
+                            <ul>
+                                <li>
+                                    Proficiency in HTML and CSS for web design.
+                                </li>
+                                <li>
+                                    Knowledge of JavaScript for adding interactivity.
+                                </li>
+                                <li>
+                                    Familiarity with Git and GitHub for version control.
+                                </li>
+                                <li>
+                                    Competence in command-line usage and file navigation.
+                                </li>
+                            </ul>
+                            <p>
+                                This project demonstrates my ability to integrate various web technologies and tools to create a functional and visually appealing website that highlights my accomplishments and creations.
                             </p>
             
                             <h3>images:</h3>
@@ -221,19 +257,19 @@
                         <h3>skills:</h3>
 
                         <div id="skills">
-                            <i aria-label="HTML 5" class="iconA-html5"></i>
-                            <i aria-label="CSS 3"class="iconA-CSS3"></i>
-                            <i aria-label="JavaScript" class="iconA-JS"></i>
-                            <i aria-label="git" class="iconA-git"></i>
-                            <i aria-label="Chrome DevTools" class="iconA-chrome"></i>
-                            <i aria-label="Terminal" class="iconA-terminal"></i>
-                            <i aria-label="GitHub" class="iconA-github"></i>
-                            <i aria-label="WIX" class="iconA-wix"></i>   
-                            <i aria-label="Autodesk Maya" class="iconA-autodesk"></i>  
-                            <i aria-label="Adobe Photoshop"  class="iconA-ps"></i>
-                            <i aria-label="Adobe Illustrator"  class="iconA-ai"></i>
-                            <i aria-label="Adobe Indesign"  class="iconA-in"></i>
-                            <i aria-label="Excel and VBA" class="iconA-excel"></i>                     
+                            <i role="img" aria-label="HTML 5" class="iconA-html5"></i>
+                            <i role="img" aria-label="CSS 3"class="iconA-CSS3"></i>
+                            <i role="img" aria-label="JavaScript" class="iconA-JS"></i>
+                            <i role="img" aria-label="git" class="iconA-git"></i>
+                            <i role="img" aria-label="Chrome DevTools" class="iconA-chrome"></i>
+                            <i role="img" aria-label="Terminal" class="iconA-terminal"></i>
+                            <i role="img" aria-label="GitHub" class="iconA-github"></i>
+                            <i role="img" aria-label="WIX" class="iconA-wix"></i>   
+                            <i role="img" aria-label="Autodesk Maya" class="iconA-autodesk"></i>  
+                            <i role="img" aria-label="Adobe Photoshop"  class="iconA-ps"></i>
+                            <i role="img" aria-label="Adobe Illustrator"  class="iconA-ai"></i>
+                            <i role="img" aria-label="Adobe Indesign"  class="iconA-in"></i>
+                            <i role="img" aria-label="Excel and VBA" class="iconA-excel"></i>                     
                           </div>
 
                     </section>
@@ -249,12 +285,12 @@
                         
                         <h3>what will it be?</h3>
                         <div id="contactWays">
-                            <i aria-label="E-mail" class="iconA-email"></i>
-                            <i aria-label="Phonecall" class="iconA-sPhone"></i>  
-                            <i aria-label="linkedIn" class="iconA-linkedin"></i>    
-                            <i aria-label="In-person" class="iconA-irl"></i>
-                            <i aria-label="Sms" class="iconA-sms"></i>
-                            <i aria-label="Messenger" class="iconA-messenger"></i>          
+                            <i role="img" aria-label="E-mail" class="iconA-email"></i>
+                            <i role="img" aria-label="Phonecall" class="iconA-sPhone"></i>  
+                            <i role="img" aria-label="linkedIn" class="iconA-linkedin"></i>    
+                            <i role="img" aria-label="In-person" class="iconA-irl"></i>
+                            <i role="img" aria-label="Sms" class="iconA-sms"></i>
+                            <i role="img" aria-label="Messenger" class="iconA-messenger"></i>          
                           </div>
 
 
@@ -264,15 +300,15 @@
                 </main>
             </div>
             <figure class="portfolioDiv">
-                <figcaption class="portTitle">spacejumpers</figcaption>
+                <figcaption id="spacejumpersCaption" class="portTitle">spacejumpers</figcaption>
                 <div class="imgBox">
-                  <img src="./resources/images/spacejumpers.jpg" alt="Astro" class="portfolioImg" />
+                  <img src="./resources/images/spacejumpers.jpg" alt="Screenshot of the Spacejumpers webpage. An astronaut jumping on an alien planet." class="portfolioImg" aria-labelledby="spacejumpersCaption" />
                 </div>
             </figure>
             <figure class="portfolioDiv">
-                <figcaption class="portTitle">craneWarriors</figcaption>
+                <figcaption id="craneWarriorsCaption" class="portTitle">craneWarriors</figcaption>
                 <div class="imgBox">
-                  <img src="./resources/images/craneWarriors.jpg" alt="A piece of a screenshot of the Crane Warriors webpage" class="portfolioImg" />
+                  <img src="./resources/images/craneWarriors.jpg" alt="Screenshot of the Crane Warriors webpage. Title showing on top of orange sunset." class="portfolioImg" aria-labelledby="craneWarriorsCaption" />
                 </div>
             </figure>
 

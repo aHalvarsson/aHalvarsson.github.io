@@ -242,7 +242,10 @@ nav li:active {
     right: auto;
     opacity: 0;
     background-color: #ffffffef;
-    border: 1px solid #cecece;
+    border: 1px solid;
+    border-image-slice: 1;
+    border-width: 1px;
+    border-image-source: linear-gradient(to right, #cecece25 0%, #cececeef 10%, #cececeef 90%, #cecece25 100%);;
     box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.17), 0px 4px 8px 0 rgba(0, 0, 0, 0.07);
     transition-timing-function: ease;
 }
@@ -255,6 +258,16 @@ nav li:active {
     max-width: 36rem;
     z-index: 11;
     padding: 0.7dvw;
+}
+
+.pItemClass ul {
+    list-style: disc;
+    list-style-position: inside;
+    padding-left: 1.4dvw;
+    margin-top: 0.4dvw;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.2rem;
 }
 
 .pItemClass header {
