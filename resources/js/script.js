@@ -6,21 +6,33 @@ const pageMenu = document.getElementById('siteMenu'); //Main site menu
 const thumbnailContainer = document.querySelector('.thumbnailContainer');
 const thumbnails = document.querySelectorAll('.thumbnails');
 
-
+let windowWidth = (window.innerWidth || document.documentElement.clientWidth);
 let portWindowOpen = false; //Used to stop the user from starting several actions at the same time.
 let portWindowFinish = true; //As above
-
+let portfolioBody;
 // Variable declaration
 let sameIndex;
 let portItem;
 
 const thumbnailHover = () => {
-
     thumbnails.forEach((thumbnail) => {
         thumbnail.addEventListener('mouseover', showFullImage);
         thumbnail.addEventListener('mouseout', hideFullImage);
       });
 }
+
+const isElementInViewport = el => {
+    const rect = el.getBoundingClientRect();
+    const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+    windowWidth = (window.innerWidth || document.documentElement.clientWidth);
+  
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= windowHeight &&
+      rect.right <= windowWidth
+    );
+  }
 
 const showFullImage = (event) => {
     const target = event.target;
@@ -28,18 +40,31 @@ const showFullImage = (event) => {
       return;
     }
     const fullImage = document.createElement('img');
-  fullImage.src = target.src;
-  fullImage.classList.add('full-image'); // Add this line to add the full-image class
-  fullImage.style.opacity = '0';
-  fullImage.style.width = 16 + 'rem';
-  fullImage.style.height = 16 + 'rem';
-  fullImage.style.transition = 'opacity 0.75s, width 0.25s, height 0.25s';
+    fullImage.src = target.src;
+    fullImage.classList.add('full-image'); // Add this line to add the full-image class
+    fullImage.id = 'fullHoverImage';
+    applyStyles(fullImage, {
+        opacity: '0',
+        width: 16 + 'rem',
+        height: 16 + 'rem',
+        transition: 'opacity 0.5s, width 0.25s, height 0.25s'
+    });
+    let tempMath = windowWidth * 0.35;
+    setTimeout(() => {
+        applyStyles(fullImage, {
+            opacity: '1',
+            width: tempMath + 'px',
+            height: 'auto'
+        });
+    },10);
 
     setTimeout(() => {
-        fullImage.style.opacity = '1';
-        fullImage.style.width = 26 + 'rem';
-        fullImage.style.height = 26 + 'rem';
-    },10)
+      //  const element = document.querySelector('.toolSelect');
+        if (!isElementInViewport(fullImage)) {
+            scrollToSection(fullImage.id, 'center');
+        }
+        
+    }, 500);
 
   target.parentElement.appendChild(fullImage);
   };
@@ -58,6 +83,12 @@ const showFullImage = (event) => {
 
 //Look for and find the right portfoliotext to the image clicked
 const searchForIndex = term => [...portImg].indexOf(term);
+
+function applyStyles(element, styles) {
+    for (const [property, value] of Object.entries(styles)) {
+      element.style[property] = value;
+    }
+  }
 
 //Portfolio image hover. Width increases and grayscale goes down to zero
 const portImgHover = event => {
@@ -99,36 +130,49 @@ const portImgClick = event => {
         portItem.style.width = '8dvw';
 
         sameIndex = searchForIndex(portItem); //Find in what position on the page the clicked image has
+        portfolioBody = pItemArt[sameIndex];
         portWindow.style.display = 'block'; //Start the opening of portfolio background
-        pItemArt[sameIndex].style.display = 'block'; //Use index from earlier and open the right portfolio item
-
-        let pHeight = pItemArt[sameIndex].offsetHeight; //Get hight from portfolio item.
+        portfolioBody.style.display = 'block'; //Use index from earlier and open the right portfolio item
+        
+        thumbnailHover();
+        
+        let pHeight = portfolioBody.offsetHeight; //Get hight from portfolio item.
 
         if (pHeight < 704) 
             pHeight = 48;
         else 
-            pHeight = (pHeight / 16) + 5.5; //Check and set min-height
-        
-        //Start showing the portfolio item
-        pItemArt[sameIndex].style.opacity = '1';
-        pItemArt[sameIndex].style.marginTop = 4 + 'rem';
-        pItemArt[sameIndex].style.transition = 'opacity 1.5s, margin 1s';
+            pHeight = (pHeight / 16) + 6; //Check and set min-height
 
         // Start showing the portfolio background and set the hight to earlier
         // calculations
-        portWindow.style.opacity = '0.9';
-        portWindow.style.height = pHeight + 'rem';
-        portWindow.style.transition = 'height 1s, opacity 1.5s';
+
+        applyStyles(portWindow, {
+            transitionTimingFunction: 'ease-in-out',
+            transition: 'height 0.3s, opacity 1.5s',
+            opacity: '1',
+            height: pHeight + 'rem',
+            width: '43rem',
+            transform: 'translateX(-3rem)'
+          });
+        
+         //Start showing the portfolio item
+
+        applyStyles(portfolioBody, {
+            transitionTimingFunction: 'ease-in-out',
+            transition: 'opacity 1.5s, margin 0.7s',
+            opacity: '1',
+            marginTop: '4rem'
+         });
+         
 
         //exitBox transists from 0 to 1 in opacity
         exitBox.style.opacity = '1';
 
         //The clicked portfolio image on top
-        portItem.style.zIndex = '15';
+        portItem.style.zIndex = '9';
 
         setTimeout(() => {
             exitBox.addEventListener('click', abortPortfolio); //Put back exitBox event listener
-            thumbnailHover();
             portWindowFinish = true; //The portfolio opening is finished. Ready for users next action
         }, 2500);
 
@@ -144,15 +188,20 @@ const abortPortfolio = () => { //Close portfolio. Can be called by exitbox click
 
     exitBox.style.opacity = '0'; //Fade away exitbox
 
+     //Fade and move away the portfolio item
+     applyStyles(portfolioBody, {
+        transitionTimingFunction: 'ease-in-out',
+        transition: 'opacity 0.5s, margin 0.5s',
+        opacity: '0',
+        marginTop: '-30rem'
+    });
     //Fade and shrink the portfolio background
-    portWindow.style.height = '0';
-    portWindow.style.opacity = '0';
-    portWindow.style.transition = 'height 1s, opacity 1s';
-
-    //Fade and move away the portfolio item
-    pItemArt[sameIndex].style.opacity = '0';
-    pItemArt[sameIndex].style.marginTop = -10 + 'rem';
-    pItemArt[sameIndex].style.transition = 'opacity 1.5s, margin 1s';
+    applyStyles(portWindow, {
+        transitionTimingFunction: 'ease-in',
+        height:'2rem',
+        opacity: '0',
+        transition: 'height 1s, opacity 0.75s'
+    });
 
     //Reset the clicked portfolio image and turn on mouseout event again
     portItem.addEventListener('mouseout', portImgOut);
@@ -163,7 +212,10 @@ const abortPortfolio = () => { //Close portfolio. Can be called by exitbox click
     portItem.style.width = '5.75dvw';
 
     setTimeout(() => { //Giv the transitions time before turning of displays
-        pItemArt[sameIndex].style.display = 'none';
+        applyStyles(portfolioBody, {
+            marginTop: '-10rem',
+            display: 'none'
+        });
         portWindow.style.display = 'none';
         exitBox.style.display = 'none';
 
@@ -176,9 +228,9 @@ const abortPortfolio = () => { //Close portfolio. Can be called by exitbox click
 }
 
 //Takes an id and scrolls the window to that element
-const scrollToSection = (sectionId) => {
+const scrollToSection = (sectionId, scrollPosition = 'start') => {
     const section = document.getElementById(sectionId);
-    section.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    section.scrollIntoView({behavior: "smooth", block: scrollPosition, inline: "nearest"});
 };
 
 //Function for the main menu.

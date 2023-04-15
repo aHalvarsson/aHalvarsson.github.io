@@ -108,11 +108,14 @@ h3 {
   color: #000
 }
 p {
-  padding-left: 1.4dvw;
-  margin-top: .4dvw;
   font-size: .95rem;
   font-weight: 500;
   line-height: 1.2rem
+}
+.projectDesc {
+    color: #333333;
+    font-size: .95rem;
+    font-weight: 300;
 }
 .portfolioDiv figcaption {
   font-weight: 500;
@@ -128,6 +131,20 @@ i[aria-label]:after {
   font-size: 1rem;
   font-family: metro,Arial,Helvetica,sans-serif;
   font-weight: 500
+}
+.linkContainer a:link{
+    color: #000;
+    text-decoration: underline;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+}
+.linkContainer a:hover{
+    text-decoration: none;
+}
+.linkContainer a:active{
+    text-decoration: underline;
+    color: var(--font-red);
 }
 .blue {
   color: var(--font-blue)
