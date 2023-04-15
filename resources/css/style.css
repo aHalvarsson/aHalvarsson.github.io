@@ -232,6 +232,33 @@ nav li:active {
   padding-left: 1.4dvw;
   margin-top: .4dvw
 }
+.pItemClass ol {
+  list-style: none;
+  counter-reset: num;
+  list-style-position: outside;
+  margin-top: .4dvw
+}
+.pItemClass ol > li {
+  position: relative;
+  counter-increment: num;
+  padding-left: 1.4dvw;
+}
+.pItemClass ol > li::before {
+  content: counter(num) ". ";
+  color: var(--font-red);
+
+  font-weight: 500;
+  font-size: 0.9rem;
+
+  width: 1.5dvw;
+  max-width: 1.5rem;
+
+  position: absolute;
+  left: 0;
+
+
+  vertical-align: middle
+}
 .pItemClass header {
   display: flex;
   justify-content: flex-start;
@@ -304,14 +331,14 @@ p {
 }
 .thumbnails {
     margin-top: 2px;
-    border: 1px solid #0000003d;
+    border: 2px solid #0000006b;
     height: auto;
     flex: 2 2 7rem;
     position: relative;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 .thumbnails:hover {
-    border: 1px solid #00000046;
+    border: 2px solid #00000046;
     margin-top: 0;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px 0px, rgba(0, 0, 0, 0.3) 0px 4px 8px 0px;
