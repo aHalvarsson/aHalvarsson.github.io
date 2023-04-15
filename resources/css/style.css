@@ -228,7 +228,7 @@ nav li:active {
   opacity: 0
 }
 .pItemClass ul {
-  list-style: disc inside;
+  list-style: disc outside;
   padding-left: 1.4dvw;
   margin-top: .4dvw
 }
