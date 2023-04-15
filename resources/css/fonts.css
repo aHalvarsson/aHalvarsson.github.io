@@ -89,7 +89,8 @@ h1 {
   font-size: 1.2rem;
   margin: .8rem 0
 }
-.pItemClass ul, .pItemClass ol {
+.pItemClass ol,
+.pItemClass ul {
   font-size: .95rem;
   font-weight: 500;
   line-height: 1.2rem
@@ -113,9 +114,9 @@ p {
   line-height: 1.2rem
 }
 .projectDesc {
-    color: #333333;
-    font-size: .95rem;
-    font-weight: 300;
+  color: #333;
+  font-size: .95rem;
+  font-weight: 300
 }
 .portfolioDiv figcaption {
   font-weight: 500;
@@ -132,19 +133,18 @@ i[aria-label]:after {
   font-family: metro,Arial,Helvetica,sans-serif;
   font-weight: 500
 }
-.linkContainer a:link{
-    color: #000;
-    text-decoration: underline;
-    font-size: 0.9rem;
-    font-weight: 600;
-
+.linkContainer a:link {
+  color: #000;
+  text-decoration: underline;
+  font-size: .9rem;
+  font-weight: 600
 }
-.linkContainer a:hover{
-    text-decoration: none;
+.linkContainer a:hover {
+  text-decoration: none
 }
-.linkContainer a:active{
-    text-decoration: underline;
-    color: var(--font-red);
+.linkContainer a:active {
+  text-decoration: underline;
+  color: var(--font-red)
 }
 .blue {
   color: var(--font-blue)

@@ -215,7 +215,7 @@ nav li:active {
   border: 2px solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(to top,#cecece71 0%,#858585ef 40%,#8d8d8def 60%,#cecece71 100%);
-  box-shadow: rgba(37, 37, 37, 0.25) 0px 7px 27px -1px, rgba(0, 0, 0, 0.3) 0px 6px 16px -4px;
+  box-shadow: rgba(37,37,37,.25) 0 7px 27px -1px,rgba(0,0,0,.3) 0 6px 16px -4px;
   transition-timing-function: ease
 }
 .pItemClass {
@@ -241,23 +241,18 @@ nav li:active {
 .pItemClass ol > li {
   position: relative;
   counter-increment: num;
-  padding-left: 1.4dvw;
+  padding-left: 1.4dvw
 }
 .pItemClass ol > li::before {
   content: counter(num) ". ";
   color: var(--font-red);
-
-  font-weight: 500;
-  font-size: 0.9rem;
-
+  font-weight:500;
+  font-size: .9rem;
   width: 1.5dvw;
   max-width: 1.5rem;
-
-  position: absolute;
+  position:absolute;
   left: 0;
-
-
-  vertical-align: middle
+  vertical-align: middle;
 }
 .pItemClass header {
   display: flex;
@@ -270,12 +265,12 @@ nav li:active {
   border-bottom: 1px solid #cdced1
 }
 .projectDesc {
-    display: block;
-    margin-top: 0.3rem;
+  display: block;
+  margin-top: .3rem
 }
 h3 {
   margin-top: 2.2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem
 }
 p {
   padding-left: 1.4dvw;
@@ -310,10 +305,10 @@ p {
   flex-wrap: wrap;
   row-gap: .5rem;
   column-gap: .3rem;
-  margin-top: 1rem;
+  margin-top: 1rem
 }
 #contactWays > *,
-#skills > * ,
+#skills > *,
 #toolsUsed > * {
   height: 2rem;
   width: 4rem;
@@ -321,46 +316,45 @@ p {
   text-align: center
 }
 .thumbnailContainer {
-    display: flex;
-    width: 100%;
-    margin-top: .4dvw;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-flow: row wrap;
-    gap: 1rem;
+  display: flex;
+  width: 100%;
+  margin-top: .4dvw;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  gap: 1rem
 }
 .thumbnails {
-    margin-top: 2px;
-    border: 2px solid #0000006b;
-    height: auto;
-    flex: 2 2 7rem;
-    position: relative;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  margin-top: 2px;
+  border: 2px solid #0000006b;
+  height: auto;
+  flex: 2 2 7rem;
+  position: relative;
+  box-shadow: rgba(50,50,93,.25) 0 6px 12px -2px,rgba(0,0,0,.3) 0 3px 7px -3px
 }
 .thumbnails:hover {
-    border: 2px solid #00000046;
-    margin-top: 0;
-    background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px 0px, rgba(0, 0, 0, 0.3) 0px 4px 8px 0px;
+  border: 2px solid #00000046;
+  margin-top: 0;
+  background-color: #fff;
+  box-shadow: rgba(0,0,0,.35) 0 5px 10px 0,rgba(0,0,0,.3) 0 4px 8px 0
 }
 .thumbnails:hover > img {
-
-    opacity: 0.4;
+  opacity: .4
 }
 .full-image {
-position: absolute;
-left: 50%;
-top: 70%;
-border:1rem solid #000000e3;
-transform: translateX(-50%);
-z-index: 20;
-box-shadow: rgba(50, 50, 93, 0.25) 4px 13px 27px -5px, rgba(0, 0, 0, 0.3) 2px 8px 16px -8px;
-opacity: 0;
-max-inline-size: none;
-max-block-size: none;
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  border: 1rem solid #000000e3;
+  transform: translateX(-50%);
+  z-index: 20;
+  box-shadow: rgba(50,50,93,.25) 4px 13px 27px -5px,rgba(0,0,0,.3) 2px 8px 16px -8px;
+  opacity: 0;
+  max-inline-size: none;
+  max-block-size: none
 }
 i {
-  position: relative;
+  position: relative
 }
 i[aria-label]:after {
   opacity: 0;
@@ -369,13 +363,13 @@ i[aria-label]:after {
   position: absolute;
   left: 50%;
   top: 105%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%,0);
   white-space: nowrap;
   z-index: 20;
   border: 1px solid #afafaf;
   background: rgba(255,255,255,.877);
   transition: opacity .5s;
-  pointer-events: none;
+  pointer-events: none
 }
 i[aria-label]:hover:after {
   opacity: 1;
