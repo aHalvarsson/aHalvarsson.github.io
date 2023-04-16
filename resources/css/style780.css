@@ -1,0 +1,47 @@
+@media only screen and (max-width: 780px) {
+    #leftSidePortfolio, #rightSidePortfolio {
+
+        position: absolute;
+        top: 5.5rem;
+        max-width: 40%;
+ 
+    }
+    #leftSidePortfolio {
+        right: 55%;
+        justify-content: flex-end;
+    }
+    #rightSidePortfolio {
+        left: 55%;
+        justify-content: flex-start;
+    }
+    .portfolioDiv {
+        width: 16dvw;
+        height: clamp(24rem, 55dvw, 25rem);
+        position: relative;
+    }
+    .portfolioDiv figcaption {
+        height: 100%;
+        background: linear-gradient(#ffffffbb 60%,#ffffff00 100%);
+    }
+    #mainDiv {
+        width: 90%;
+        margin: 0 auto; 	/* for centering the content in the middle of the page */
+    }
+    #bodyContainer {
+        display: block;
+    }
+    #logoDiv {
+        width: 5dvw;
+        position: absolute;
+        top: 8.5rem;
+        left: 46.3%;
+        
+    }
+    #codeDiv {
+        visibility: hidden;
+    }
+    h1 {
+        font-size: clamp(3.3rem, 8dvw, 3.5rem);
+        line-height: clamp(3.3rem, 8dvw, 3.5rem);
+    }
+}
