@@ -14,13 +14,13 @@ html {
 #mainHeader {
   position: sticky;
   position: -webkit-sticky;
-  top: -3.8rem;
+  top: clamp(-3.8rem, -4dvw, -3.2rem);
   z-index: 7
 }
 nav {
   width: 100%;
-  padding-top: clamp(2rem,4.5dvw,4rem);
-  padding-bottom: clamp(1rem,2dvw,2rem);
+  padding-top: clamp(3.5rem,4.5dvw,4rem);
+  padding-bottom: clamp(1.5rem,2dvw,2rem);
   display: flex;
   justify-content: center;
   background: linear-gradient(to bottom,#ffffffc0 60%,#ffffff00 100%)
@@ -28,17 +28,19 @@ nav {
 nav ul {
   display: flex;
   flex-flow: row nowrap;
+  justify-content: space-between;
   margin: 0 auto
 }
 nav li {
   border: 0 solid #bebebe;
-  height: clamp(1.75rem,2.25dvw,2.25rem);
-  width: clamp(8rem,11.25dvw,11.25rem);
+  height: clamp(1.95rem, 2.25dvw, 2.25rem);
+  flex: 2 2 ips;
   display: flex;
   background-color: #000;
   justify-content: center;
   align-items: center;
-  margin: 1px .3dvw 0;
+  margin: 1px .5dvw 0;
+  padding: 0.2rem 0.5rem;
   box-shadow: none;
   border-radius: 0;
   transition: box-shadow .25s
@@ -72,31 +74,27 @@ nav li:active {
 #mainDiv {
   margin-left: clamp(.5rem,1dvw,1rem);
   margin-right: clamp(.5rem,1dvw,1rem);
-  width: 37dvw;
-  max-width: 37rem;
+  width: clamp(24rem, 40dvw, 37rem);
   position: relative
 }
-#leftSidePortfolio {
+#leftSidePortfolio, #rightSidePortfolio {
   margin-top: 0;
   display: flex;
-  column-gap: .6rem;
-  justify-content: flex-end;
+  max-width: 12.8rem;
+  column-gap: clamp(0.1rem, 0.9dvw, .7rem);
   align-items: flex-start;
   flex-flow: row nowrap
+}
+#leftSidePortfolio {
+  justify-content: flex-end;
 }
 #rightSidePortfolio {
-  margin-top: 0;
-  display: flex;
-  column-gap: .6rem;
   justify-content: flex-start;
-  align-items: flex-start;
-  flex-flow: row nowrap
 }
 .portfolioDiv {
-  margin: 2.5rem .2dvw;
-  width: 5.75dvw;
-  height: 47dvw;
-  max-height: 47rem;
+  margin: 2.5rem 0;
+  width: clamp(5rem, 10dvw, 6rem);
+  height: clamp(37rem, 58dvw, 47rem);
   position: relative;
   writing-mode: vertical-lr;
   cursor: pointer;
@@ -116,10 +114,8 @@ nav li:active {
   position: absolute;
   top: 0;
   left: 0;
-  width: 3dvw;
-  max-width: 3rem;
-  height: 35dvw;
-  max-height: 35rem;
+  width: clamp(2.5rem, 3dvw, 3rem);
+  height: 65%;
   background: linear-gradient(#ffffffbb 50%,#ffffff00 100%);
   z-index: 2;
   padding-top: .8dvw
@@ -146,8 +142,7 @@ nav li:active {
   align-items: center
 }
 #logoDiv {
-  width: 4.8dvw;
-  max-width: 4.8rem
+  width: clamp(3.5rem, 4.8dvw, 5rem);
 }
 #codeDiv ol {
   list-style-type: none;
@@ -170,7 +165,7 @@ nav li:active {
   left: 0;
   font-weight: 300;
   color: #337792;
-  vertical-align: middle
+  vertical-align: middle;
 }
 .indent::before {
   content: ' ';

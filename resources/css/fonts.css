@@ -37,30 +37,29 @@ html {
 }
 .prefix,
 .suffix {
-  font-size: .9rem;
-  color: #bbb
+  font-size: clamp(.7rem, 1dvw, .9rem);
+  color: #bbb;
 }
 .bracket {
   color: #bbb;
-  font-size: 1rem
+  font-size: clamp(.7rem, 1dvw, 1rem);
 }
 .button-text {
   color: #fff;
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 1.3dvw, 1.2rem);
   font-weight: 500;
   transition: font-size .25s,color 1s
 }
 nav li:hover .button-text {
-  font-size: 1.2rem;
   color: #f0d909
 }
 #logoDiv {
   writing-mode: vertical-lr
 }
 h1 {
-  font-size: 3.75rem;
+  font-size: clamp(3rem, 4dvw, 3.75rem);
   font-weight: 600;
-  line-height: 3.75rem;
+  line-height: clamp(3rem, 4dvw, 3.75rem);
   font-family: Poppins,Arial,Helvetica,sans-serif
 }
 #codeDiv {
@@ -120,7 +119,7 @@ p {
 }
 .portfolioDiv figcaption {
   font-weight: 500;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 3.2dvw, 2.5rem);
   color: var(--font-red);
   letter-spacing: .1rem
 }
